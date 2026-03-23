@@ -1,0 +1,27 @@
+@mixin inputStyle {
+    border-color: #e1e1e1;
+    height: 44px;
+    border-radius: 0.475rem;
+    color: $black;
+}
+@mixin selectStyle {
+    border: none;
+    height: 44px;
+    border-radius: 0.475rem;
+    color: $black;
+}
+@mixin textareStyle {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    color: $black;
+    resize: none;
+}
+@mixin textareStyleWhite {
+    border: none;
+    border-radius: 1.25rem;
+    background-color: $white;
+    padding: 0.75rem;
+    color: $black;
+    resize: none;
+}

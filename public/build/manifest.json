@@ -1,0 +1,791 @@
+{
+  "_additional-methods.min-367bca93.js": {
+    "file": "assets/additional-methods.min-367bca93.js"
+  },
+  "node_modules/@fontsource/poppins/files/poppins-all-400-normal.woff": {
+    "file": "assets/poppins-all-400-normal-c68e1edb.woff",
+    "src": "node_modules/@fontsource/poppins/files/poppins-all-400-normal.woff"
+  },
+  "node_modules/@fontsource/poppins/files/poppins-devanagari-400-normal.woff2": {
+    "file": "assets/poppins-devanagari-400-normal-478b3ab7.woff2",
+    "src": "node_modules/@fontsource/poppins/files/poppins-devanagari-400-normal.woff2"
+  },
+  "node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2": {
+    "file": "assets/poppins-latin-400-normal-7d93459d.woff2",
+    "src": "node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2"
+  },
+  "node_modules/@fontsource/poppins/files/poppins-latin-ext-400-normal.woff2": {
+    "file": "assets/poppins-latin-ext-400-normal-cb8bdeab.woff2",
+    "src": "node_modules/@fontsource/poppins/files/poppins-latin-ext-400-normal.woff2"
+  },
+  "node_modules/owl.carousel/dist/assets/owl.video.play.png": {
+    "file": "assets/owl.video.play-04360456.png",
+    "src": "node_modules/owl.carousel/dist/assets/owl.video.play.png"
+  },
+  "node_modules/summernote/dist/font/summernote.eot": {
+    "file": "assets/summernote-05ce99db.eot",
+    "src": "node_modules/summernote/dist/font/summernote.eot"
+  },
+  "node_modules/summernote/dist/font/summernote.ttf": {
+    "file": "assets/summernote-2a5c8f9c.ttf",
+    "src": "node_modules/summernote/dist/font/summernote.ttf"
+  },
+  "node_modules/summernote/dist/font/summernote.woff": {
+    "file": "assets/summernote-9ea36fc9.woff",
+    "src": "node_modules/summernote/dist/font/summernote.woff"
+  },
+  "node_modules/summernote/dist/font/summernote.woff2": {
+    "file": "assets/summernote-17aff429.woff2",
+    "src": "node_modules/summernote/dist/font/summernote.woff2"
+  },
+  "resources/admin/css/app.css": {
+    "file": "assets/app-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/admin/css/app.css"
+  },
+  "resources/admin/images/banner-login.jpg": {
+    "file": "assets/banner-login-a1946afb.jpg",
+    "src": "resources/admin/images/banner-login.jpg"
+  },
+  "resources/admin/images/favicon/android-icon-144x144.png": {
+    "file": "assets/ms-icon-144x144-8ac396ca.png",
+    "src": "resources/admin/images/favicon/ms-icon-144x144.png"
+  },
+  "resources/admin/images/favicon/android-icon-192x192.png": {
+    "file": "assets/android-icon-192x192-63c66b61.png",
+    "src": "resources/admin/images/favicon/android-icon-192x192.png"
+  },
+  "resources/admin/images/favicon/android-icon-36x36.png": {
+    "file": "assets/android-icon-36x36-5654123f.png",
+    "src": "resources/admin/images/favicon/android-icon-36x36.png"
+  },
+  "resources/admin/images/favicon/android-icon-48x48.png": {
+    "file": "assets/android-icon-48x48-c251feef.png",
+    "src": "resources/admin/images/favicon/android-icon-48x48.png"
+  },
+  "resources/admin/images/favicon/android-icon-72x72.png": {
+    "file": "assets/apple-icon-72x72-c79daefc.png",
+    "src": "resources/admin/images/favicon/apple-icon-72x72.png"
+  },
+  "resources/admin/images/favicon/android-icon-96x96.png": {
+    "file": "assets/favicon-96x96-b2780097.png",
+    "src": "resources/admin/images/favicon/favicon-96x96.png"
+  },
+  "resources/admin/images/favicon/apple-icon-114x114.png": {
+    "file": "assets/apple-icon-114x114-0f1b38e4.png",
+    "src": "resources/admin/images/favicon/apple-icon-114x114.png"
+  },
+  "resources/admin/images/favicon/apple-icon-120x120.png": {
+    "file": "assets/apple-icon-120x120-b40b66ba.png",
+    "src": "resources/admin/images/favicon/apple-icon-120x120.png"
+  },
+  "resources/admin/images/favicon/apple-icon-144x144.png": {
+    "file": "assets/ms-icon-144x144-8ac396ca.png",
+    "src": "resources/admin/images/favicon/ms-icon-144x144.png"
+  },
+  "resources/admin/images/favicon/apple-icon-152x152.png": {
+    "file": "assets/apple-icon-152x152-d94bdc35.png",
+    "src": "resources/admin/images/favicon/apple-icon-152x152.png"
+  },
+  "resources/admin/images/favicon/apple-icon-180x180.png": {
+    "file": "assets/apple-icon-180x180-09fdb2d8.png",
+    "src": "resources/admin/images/favicon/apple-icon-180x180.png"
+  },
+  "resources/admin/images/favicon/apple-icon-57x57.png": {
+    "file": "assets/apple-icon-57x57-a8f6d297.png",
+    "src": "resources/admin/images/favicon/apple-icon-57x57.png"
+  },
+  "resources/admin/images/favicon/apple-icon-60x60.png": {
+    "file": "assets/apple-icon-60x60-ec686913.png",
+    "src": "resources/admin/images/favicon/apple-icon-60x60.png"
+  },
+  "resources/admin/images/favicon/apple-icon-72x72.png": {
+    "file": "assets/apple-icon-72x72-c79daefc.png",
+    "src": "resources/admin/images/favicon/apple-icon-72x72.png"
+  },
+  "resources/admin/images/favicon/apple-icon-76x76.png": {
+    "file": "assets/apple-icon-76x76-5a9cbba2.png",
+    "src": "resources/admin/images/favicon/apple-icon-76x76.png"
+  },
+  "resources/admin/images/favicon/apple-icon-precomposed.png": {
+    "file": "assets/apple-icon-575fa430.png",
+    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
+  },
+  "resources/admin/images/favicon/apple-icon.png": {
+    "file": "assets/apple-icon-575fa430.png",
+    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
+  },
+  "resources/admin/images/favicon/favicon-16x16.png": {
+    "file": "assets/favicon-16x16-ac5e2512.png",
+    "src": "resources/admin/images/favicon/favicon-16x16.png"
+  },
+  "resources/admin/images/favicon/favicon-32x32.png": {
+    "file": "assets/favicon-32x32-de79cfe9.png",
+    "src": "resources/admin/images/favicon/favicon-32x32.png"
+  },
+  "resources/admin/images/favicon/favicon-96x96.png": {
+    "file": "assets/favicon-96x96-b2780097.png",
+    "src": "resources/admin/images/favicon/favicon-96x96.png"
+  },
+  "resources/admin/images/favicon/favicon.ico": {
+    "file": "assets/favicon-0bcc551f.ico",
+    "src": "resources/admin/images/favicon/favicon.ico"
+  },
+  "resources/admin/images/favicon/ms-icon-144x144.png": {
+    "file": "assets/ms-icon-144x144-8ac396ca.png",
+    "src": "resources/admin/images/favicon/ms-icon-144x144.png"
+  },
+  "resources/admin/images/favicon/ms-icon-150x150.png": {
+    "file": "assets/ms-icon-150x150-b9a4ab98.png",
+    "src": "resources/admin/images/favicon/ms-icon-150x150.png"
+  },
+  "resources/admin/images/favicon/ms-icon-310x310.png": {
+    "file": "assets/ms-icon-310x310-a45940a4.png",
+    "src": "resources/admin/images/favicon/ms-icon-310x310.png"
+  },
+  "resources/admin/images/favicon/ms-icon-70x70.png": {
+    "file": "assets/ms-icon-70x70-e2d0c89d.png",
+    "src": "resources/admin/images/favicon/ms-icon-70x70.png"
+  },
+  "resources/admin/images/placeholder.png": {
+    "file": "assets/placeholder-e702fc3c.png",
+    "src": "resources/admin/images/placeholder.png"
+  },
+  "resources/admin/js/app.css": {
+    "file": "assets/app-ef57bcae.css",
+    "src": "resources/admin/js/app.css"
+  },
+  "resources/admin/js/app.js": {
+    "assets": [
+      "assets/summernote-05ce99db.eot",
+      "assets/summernote-17aff429.woff2",
+      "assets/summernote-9ea36fc9.woff",
+      "assets/summernote-2a5c8f9c.ttf"
+    ],
+    "css": [
+      "assets/app-ef57bcae.css"
+    ],
+    "file": "assets/app-59b61792.js",
+    "imports": [
+      "_additional-methods.min-367bca93.js"
+    ],
+    "isEntry": true,
+    "src": "resources/admin/js/app.js"
+  },
+  "resources/admin/scss/app.scss": {
+    "file": "assets/app-c4ab5908.css",
+    "isEntry": true,
+    "src": "resources/admin/scss/app.scss"
+  },
+  "resources/admin/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-e523f49c.ttf",
+    "src": "resources/admin/webfonts/fa-brands-400.ttf"
+  },
+  "resources/admin/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-404c746c.woff2",
+    "src": "resources/admin/webfonts/fa-brands-400.woff2"
+  },
+  "resources/admin/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-4e96a7e0.ttf",
+    "src": "resources/admin/webfonts/fa-regular-400.ttf"
+  },
+  "resources/admin/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-6a274e76.woff2",
+    "src": "resources/admin/webfonts/fa-regular-400.woff2"
+  },
+  "resources/admin/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-03f2986c.ttf",
+    "src": "resources/admin/webfonts/fa-solid-900.ttf"
+  },
+  "resources/admin/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-d76fb4e8.woff2",
+    "src": "resources/admin/webfonts/fa-solid-900.woff2"
+  },
+  "resources/admin/webfonts/fa-v4compatibility.ttf": {
+    "file": "assets/fa-v4compatibility-86a687cf.ttf",
+    "src": "resources/admin/webfonts/fa-v4compatibility.ttf"
+  },
+  "resources/admin/webfonts/fa-v4compatibility.woff2": {
+    "file": "assets/fa-v4compatibility-0db31bef.woff2",
+    "src": "resources/admin/webfonts/fa-v4compatibility.woff2"
+  },
+  "resources/front/fonts/Caveat-Bold.woff": {
+    "file": "assets/Caveat-Bold-09c77f09.woff",
+    "src": "resources/front/fonts/Caveat-Bold.woff"
+  },
+  "resources/front/fonts/Caveat-Bold.woff2": {
+    "file": "assets/Caveat-Bold-4aacc005.woff2",
+    "src": "resources/front/fonts/Caveat-Bold.woff2"
+  },
+  "resources/front/fonts/Caveat-Medium.woff": {
+    "file": "assets/Caveat-Medium-2fb85acf.woff",
+    "src": "resources/front/fonts/Caveat-Medium.woff"
+  },
+  "resources/front/fonts/Caveat-Medium.woff2": {
+    "file": "assets/Caveat-Medium-362c74cb.woff2",
+    "src": "resources/front/fonts/Caveat-Medium.woff2"
+  },
+  "resources/front/fonts/Caveat-Regular.woff": {
+    "file": "assets/Caveat-Regular-5897e72a.woff",
+    "src": "resources/front/fonts/Caveat-Regular.woff"
+  },
+  "resources/front/fonts/Caveat-Regular.woff2": {
+    "file": "assets/Caveat-Regular-dc67dc7d.woff2",
+    "src": "resources/front/fonts/Caveat-Regular.woff2"
+  },
+  "resources/front/fonts/Caveat-SemiBold.woff": {
+    "file": "assets/Caveat-SemiBold-9fd850c5.woff",
+    "src": "resources/front/fonts/Caveat-SemiBold.woff"
+  },
+  "resources/front/fonts/Caveat-SemiBold.woff2": {
+    "file": "assets/Caveat-SemiBold-01dcad24.woff2",
+    "src": "resources/front/fonts/Caveat-SemiBold.woff2"
+  },
+  "resources/front/fonts/Freehand-Regular.woff": {
+    "file": "assets/Freehand-Regular-3a2ad60e.woff",
+    "src": "resources/front/fonts/Freehand-Regular.woff"
+  },
+  "resources/front/fonts/Freehand-Regular.woff2": {
+    "file": "assets/Freehand-Regular-253ca157.woff2",
+    "src": "resources/front/fonts/Freehand-Regular.woff2"
+  },
+  "resources/front/fonts/Freehand521BT-RegularC.woff": {
+    "file": "assets/Freehand521BT-RegularC-2f07598c.woff",
+    "src": "resources/front/fonts/Freehand521BT-RegularC.woff"
+  },
+  "resources/front/fonts/Freehand521BT-RegularC.woff2": {
+    "file": "assets/Freehand521BT-RegularC-671788a9.woff2",
+    "src": "resources/front/fonts/Freehand521BT-RegularC.woff2"
+  },
+  "resources/front/fonts/Kanit-Black.woff": {
+    "file": "assets/Kanit-Black-3b14c8e7.woff",
+    "src": "resources/front/fonts/Kanit-Black.woff"
+  },
+  "resources/front/fonts/Kanit-Black.woff2": {
+    "file": "assets/Kanit-Black-7d2296bc.woff2",
+    "src": "resources/front/fonts/Kanit-Black.woff2"
+  },
+  "resources/front/fonts/Kanit-BlackItalic.woff": {
+    "file": "assets/Kanit-BlackItalic-2fbb0d2a.woff",
+    "src": "resources/front/fonts/Kanit-BlackItalic.woff"
+  },
+  "resources/front/fonts/Kanit-BlackItalic.woff2": {
+    "file": "assets/Kanit-BlackItalic-3af213f6.woff2",
+    "src": "resources/front/fonts/Kanit-BlackItalic.woff2"
+  },
+  "resources/front/fonts/Kanit-Bold.woff": {
+    "file": "assets/Kanit-Bold-ced51b24.woff",
+    "src": "resources/front/fonts/Kanit-Bold.woff"
+  },
+  "resources/front/fonts/Kanit-Bold.woff2": {
+    "file": "assets/Kanit-Bold-be3eb9fb.woff2",
+    "src": "resources/front/fonts/Kanit-Bold.woff2"
+  },
+  "resources/front/fonts/Kanit-BoldItalic.woff": {
+    "file": "assets/Kanit-BoldItalic-bb2062b3.woff",
+    "src": "resources/front/fonts/Kanit-BoldItalic.woff"
+  },
+  "resources/front/fonts/Kanit-BoldItalic.woff2": {
+    "file": "assets/Kanit-BoldItalic-3deae880.woff2",
+    "src": "resources/front/fonts/Kanit-BoldItalic.woff2"
+  },
+  "resources/front/fonts/Kanit-ExtraBold.woff": {
+    "file": "assets/Kanit-ExtraBold-33cececd.woff",
+    "src": "resources/front/fonts/Kanit-ExtraBold.woff"
+  },
+  "resources/front/fonts/Kanit-ExtraBold.woff2": {
+    "file": "assets/Kanit-ExtraBold-991ed1b9.woff2",
+    "src": "resources/front/fonts/Kanit-ExtraBold.woff2"
+  },
+  "resources/front/fonts/Kanit-ExtraBoldItalic.woff": {
+    "file": "assets/Kanit-ExtraBoldItalic-ccc0641e.woff",
+    "src": "resources/front/fonts/Kanit-ExtraBoldItalic.woff"
+  },
+  "resources/front/fonts/Kanit-ExtraBoldItalic.woff2": {
+    "file": "assets/Kanit-ExtraBoldItalic-d374541c.woff2",
+    "src": "resources/front/fonts/Kanit-ExtraBoldItalic.woff2"
+  },
+  "resources/front/fonts/Kanit-ExtraLight.woff": {
+    "file": "assets/Kanit-ExtraLight-a186331c.woff",
+    "src": "resources/front/fonts/Kanit-ExtraLight.woff"
+  },
+  "resources/front/fonts/Kanit-ExtraLight.woff2": {
+    "file": "assets/Kanit-ExtraLight-c3992375.woff2",
+    "src": "resources/front/fonts/Kanit-ExtraLight.woff2"
+  },
+  "resources/front/fonts/Kanit-ExtraLightItalic.woff": {
+    "file": "assets/Kanit-ExtraLightItalic-78fa0570.woff",
+    "src": "resources/front/fonts/Kanit-ExtraLightItalic.woff"
+  },
+  "resources/front/fonts/Kanit-ExtraLightItalic.woff2": {
+    "file": "assets/Kanit-ExtraLightItalic-3b20c188.woff2",
+    "src": "resources/front/fonts/Kanit-ExtraLightItalic.woff2"
+  },
+  "resources/front/fonts/Kanit-Italic.woff": {
+    "file": "assets/Kanit-Italic-92fa4bc3.woff",
+    "src": "resources/front/fonts/Kanit-Italic.woff"
+  },
+  "resources/front/fonts/Kanit-Italic.woff2": {
+    "file": "assets/Kanit-Italic-11caed8f.woff2",
+    "src": "resources/front/fonts/Kanit-Italic.woff2"
+  },
+  "resources/front/fonts/Kanit-Light.woff": {
+    "file": "assets/Kanit-Light-ca91eb91.woff",
+    "src": "resources/front/fonts/Kanit-Light.woff"
+  },
+  "resources/front/fonts/Kanit-Light.woff2": {
+    "file": "assets/Kanit-Light-2942d1a9.woff2",
+    "src": "resources/front/fonts/Kanit-Light.woff2"
+  },
+  "resources/front/fonts/Kanit-LightItalic.woff": {
+    "file": "assets/Kanit-LightItalic-624ef008.woff",
+    "src": "resources/front/fonts/Kanit-LightItalic.woff"
+  },
+  "resources/front/fonts/Kanit-LightItalic.woff2": {
+    "file": "assets/Kanit-LightItalic-fc194fb9.woff2",
+    "src": "resources/front/fonts/Kanit-LightItalic.woff2"
+  },
+  "resources/front/fonts/Kanit-Medium.woff": {
+    "file": "assets/Kanit-Medium-4a416fc3.woff",
+    "src": "resources/front/fonts/Kanit-Medium.woff"
+  },
+  "resources/front/fonts/Kanit-Medium.woff2": {
+    "file": "assets/Kanit-Medium-31bd551c.woff2",
+    "src": "resources/front/fonts/Kanit-Medium.woff2"
+  },
+  "resources/front/fonts/Kanit-MediumItalic.woff": {
+    "file": "assets/Kanit-MediumItalic-da0f4f43.woff",
+    "src": "resources/front/fonts/Kanit-MediumItalic.woff"
+  },
+  "resources/front/fonts/Kanit-MediumItalic.woff2": {
+    "file": "assets/Kanit-MediumItalic-2b64ee80.woff2",
+    "src": "resources/front/fonts/Kanit-MediumItalic.woff2"
+  },
+  "resources/front/fonts/Kanit-Regular.woff": {
+    "file": "assets/Kanit-Regular-4ea4c894.woff",
+    "src": "resources/front/fonts/Kanit-Regular.woff"
+  },
+  "resources/front/fonts/Kanit-Regular.woff2": {
+    "file": "assets/Kanit-Regular-41dd8b30.woff2",
+    "src": "resources/front/fonts/Kanit-Regular.woff2"
+  },
+  "resources/front/fonts/Kanit-SemiBold.woff": {
+    "file": "assets/Kanit-SemiBold-b3b7979c.woff",
+    "src": "resources/front/fonts/Kanit-SemiBold.woff"
+  },
+  "resources/front/fonts/Kanit-SemiBold.woff2": {
+    "file": "assets/Kanit-SemiBold-7b718d41.woff2",
+    "src": "resources/front/fonts/Kanit-SemiBold.woff2"
+  },
+  "resources/front/fonts/Kanit-SemiBoldItalic.woff": {
+    "file": "assets/Kanit-SemiBoldItalic-8ee5c76d.woff",
+    "src": "resources/front/fonts/Kanit-SemiBoldItalic.woff"
+  },
+  "resources/front/fonts/Kanit-SemiBoldItalic.woff2": {
+    "file": "assets/Kanit-SemiBoldItalic-5b4b0b42.woff2",
+    "src": "resources/front/fonts/Kanit-SemiBoldItalic.woff2"
+  },
+  "resources/front/fonts/Kanit-Thin.woff": {
+    "file": "assets/Kanit-Thin-5ea73553.woff",
+    "src": "resources/front/fonts/Kanit-Thin.woff"
+  },
+  "resources/front/fonts/Kanit-Thin.woff2": {
+    "file": "assets/Kanit-Thin-d7ead1e7.woff2",
+    "src": "resources/front/fonts/Kanit-Thin.woff2"
+  },
+  "resources/front/fonts/Kanit-ThinItalic.woff": {
+    "file": "assets/Kanit-ThinItalic-fdef4b07.woff",
+    "src": "resources/front/fonts/Kanit-ThinItalic.woff"
+  },
+  "resources/front/fonts/Kanit-ThinItalic.woff2": {
+    "file": "assets/Kanit-ThinItalic-807bb06d.woff2",
+    "src": "resources/front/fonts/Kanit-ThinItalic.woff2"
+  },
+  "resources/front/fonts/Khand-Bold.woff": {
+    "file": "assets/Khand-Bold-e914689d.woff",
+    "src": "resources/front/fonts/Khand-Bold.woff"
+  },
+  "resources/front/fonts/Khand-Bold.woff2": {
+    "file": "assets/Khand-Bold-5cee4f38.woff2",
+    "src": "resources/front/fonts/Khand-Bold.woff2"
+  },
+  "resources/front/fonts/Khand-Light.woff": {
+    "file": "assets/Khand-Light-c8028a52.woff",
+    "src": "resources/front/fonts/Khand-Light.woff"
+  },
+  "resources/front/fonts/Khand-Light.woff2": {
+    "file": "assets/Khand-Light-08253b19.woff2",
+    "src": "resources/front/fonts/Khand-Light.woff2"
+  },
+  "resources/front/fonts/Khand-Medium.woff": {
+    "file": "assets/Khand-Medium-83338de5.woff",
+    "src": "resources/front/fonts/Khand-Medium.woff"
+  },
+  "resources/front/fonts/Khand-Medium.woff2": {
+    "file": "assets/Khand-Medium-3e6a048e.woff2",
+    "src": "resources/front/fonts/Khand-Medium.woff2"
+  },
+  "resources/front/fonts/Khand-Regular.woff": {
+    "file": "assets/Khand-Regular-ce1ff2c9.woff",
+    "src": "resources/front/fonts/Khand-Regular.woff"
+  },
+  "resources/front/fonts/Khand-Regular.woff2": {
+    "file": "assets/Khand-Regular-8a0128be.woff2",
+    "src": "resources/front/fonts/Khand-Regular.woff2"
+  },
+  "resources/front/fonts/Khand-SemiBold.woff": {
+    "file": "assets/Khand-SemiBold-aa4b36b1.woff",
+    "src": "resources/front/fonts/Khand-SemiBold.woff"
+  },
+  "resources/front/fonts/Khand-SemiBold.woff2": {
+    "file": "assets/Khand-SemiBold-2ea23388.woff2",
+    "src": "resources/front/fonts/Khand-SemiBold.woff2"
+  },
+  "resources/front/images/2.svg": {
+    "file": "assets/2-61e69a65.svg",
+    "src": "resources/front/images/2.svg"
+  },
+  "resources/front/images/about.jpg": {
+    "file": "assets/about-0309ec79.jpg",
+    "src": "resources/front/images/about.jpg"
+  },
+  "resources/front/images/angle-r.svg": {
+    "file": "assets/angle-r-adcaf901.svg",
+    "src": "resources/front/images/angle-r.svg"
+  },
+  "resources/front/images/ban-btm.svg": {
+    "file": "assets/ban-btm-94d87d10.svg",
+    "src": "resources/front/images/ban-btm.svg"
+  },
+  "resources/front/images/client-logo/1.png": {
+    "file": "assets/1-88ae2755.png",
+    "src": "resources/front/images/client-logo/1.png"
+  },
+  "resources/front/images/client-logo/10.png": {
+    "file": "assets/10-1bbb56a9.png",
+    "src": "resources/front/images/client-logo/10.png"
+  },
+  "resources/front/images/client-logo/11.png": {
+    "file": "assets/11-437217e9.png",
+    "src": "resources/front/images/client-logo/11.png"
+  },
+  "resources/front/images/client-logo/12.png": {
+    "file": "assets/12-55708496.png",
+    "src": "resources/front/images/client-logo/12.png"
+  },
+  "resources/front/images/client-logo/13.png": {
+    "file": "assets/13-75c3fcb0.png",
+    "src": "resources/front/images/client-logo/13.png"
+  },
+  "resources/front/images/client-logo/14.png": {
+    "file": "assets/14-607d7900.png",
+    "src": "resources/front/images/client-logo/14.png"
+  },
+  "resources/front/images/client-logo/15.png": {
+    "file": "assets/15-22e52bfe.png",
+    "src": "resources/front/images/client-logo/15.png"
+  },
+  "resources/front/images/client-logo/16.png": {
+    "file": "assets/16-0a6a3bc5.png",
+    "src": "resources/front/images/client-logo/16.png"
+  },
+  "resources/front/images/client-logo/2.png": {
+    "file": "assets/2-f4c39b90.png",
+    "src": "resources/front/images/client-logo/2.png"
+  },
+  "resources/front/images/client-logo/3.png": {
+    "file": "assets/3-409c3103.png",
+    "src": "resources/front/images/client-logo/3.png"
+  },
+  "resources/front/images/client-logo/4.png": {
+    "file": "assets/4-1f9d5a86.png",
+    "src": "resources/front/images/client-logo/4.png"
+  },
+  "resources/front/images/client-logo/5.png": {
+    "file": "assets/5-023c85b0.png",
+    "src": "resources/front/images/client-logo/5.png"
+  },
+  "resources/front/images/client-logo/6.png": {
+    "file": "assets/6-6e5ba11d.png",
+    "src": "resources/front/images/client-logo/6.png"
+  },
+  "resources/front/images/client-logo/7.png": {
+    "file": "assets/7-33c2db29.png",
+    "src": "resources/front/images/client-logo/7.png"
+  },
+  "resources/front/images/client-logo/8.png": {
+    "file": "assets/8-16940af3.png",
+    "src": "resources/front/images/client-logo/8.png"
+  },
+  "resources/front/images/client-logo/9.png": {
+    "file": "assets/9-95444be2.png",
+    "src": "resources/front/images/client-logo/9.png"
+  },
+  "resources/front/images/favicon/android-icon-144x144.png": {
+    "file": "assets/ms-icon-144x144-001211ec.png",
+    "src": "resources/front/images/favicon/ms-icon-144x144.png"
+  },
+  "resources/front/images/favicon/android-icon-192x192.png": {
+    "file": "assets/android-icon-192x192-f642bca7.png",
+    "src": "resources/front/images/favicon/android-icon-192x192.png"
+  },
+  "resources/front/images/favicon/android-icon-36x36.png": {
+    "file": "assets/android-icon-36x36-b6b15a34.png",
+    "src": "resources/front/images/favicon/android-icon-36x36.png"
+  },
+  "resources/front/images/favicon/android-icon-48x48.png": {
+    "file": "assets/android-icon-48x48-0b10f4f5.png",
+    "src": "resources/front/images/favicon/android-icon-48x48.png"
+  },
+  "resources/front/images/favicon/android-icon-72x72.png": {
+    "file": "assets/apple-icon-72x72-786758f6.png",
+    "src": "resources/front/images/favicon/apple-icon-72x72.png"
+  },
+  "resources/front/images/favicon/android-icon-96x96.png": {
+    "file": "assets/favicon-96x96-082a5331.png",
+    "src": "resources/front/images/favicon/favicon-96x96.png"
+  },
+  "resources/front/images/favicon/apple-icon-114x114.png": {
+    "file": "assets/apple-icon-114x114-beeb1d91.png",
+    "src": "resources/front/images/favicon/apple-icon-114x114.png"
+  },
+  "resources/front/images/favicon/apple-icon-120x120.png": {
+    "file": "assets/apple-icon-120x120-65c255b1.png",
+    "src": "resources/front/images/favicon/apple-icon-120x120.png"
+  },
+  "resources/front/images/favicon/apple-icon-144x144.png": {
+    "file": "assets/ms-icon-144x144-001211ec.png",
+    "src": "resources/front/images/favicon/ms-icon-144x144.png"
+  },
+  "resources/front/images/favicon/apple-icon-152x152.png": {
+    "file": "assets/apple-icon-152x152-cb20d293.png",
+    "src": "resources/front/images/favicon/apple-icon-152x152.png"
+  },
+  "resources/front/images/favicon/apple-icon-180x180.png": {
+    "file": "assets/apple-icon-180x180-259288f9.png",
+    "src": "resources/front/images/favicon/apple-icon-180x180.png"
+  },
+  "resources/front/images/favicon/apple-icon-57x57.png": {
+    "file": "assets/apple-icon-57x57-760ff4fc.png",
+    "src": "resources/front/images/favicon/apple-icon-57x57.png"
+  },
+  "resources/front/images/favicon/apple-icon-60x60.png": {
+    "file": "assets/apple-icon-60x60-a2e8caf0.png",
+    "src": "resources/front/images/favicon/apple-icon-60x60.png"
+  },
+  "resources/front/images/favicon/apple-icon-72x72.png": {
+    "file": "assets/apple-icon-72x72-786758f6.png",
+    "src": "resources/front/images/favicon/apple-icon-72x72.png"
+  },
+  "resources/front/images/favicon/apple-icon-76x76.png": {
+    "file": "assets/apple-icon-76x76-8b4d56e9.png",
+    "src": "resources/front/images/favicon/apple-icon-76x76.png"
+  },
+  "resources/front/images/favicon/apple-icon-precomposed.png": {
+    "file": "assets/apple-icon-4396f6bc.png",
+    "src": "resources/front/images/favicon/apple-icon.png"
+  },
+  "resources/front/images/favicon/apple-icon.png": {
+    "file": "assets/apple-icon-4396f6bc.png",
+    "src": "resources/front/images/favicon/apple-icon.png"
+  },
+  "resources/front/images/favicon/favicon-16x16.png": {
+    "file": "assets/favicon-16x16-208f2b91.png",
+    "src": "resources/front/images/favicon/favicon-16x16.png"
+  },
+  "resources/front/images/favicon/favicon-32x32.png": {
+    "file": "assets/favicon-32x32-366ca081.png",
+    "src": "resources/front/images/favicon/favicon-32x32.png"
+  },
+  "resources/front/images/favicon/favicon-96x96.png": {
+    "file": "assets/favicon-96x96-082a5331.png",
+    "src": "resources/front/images/favicon/favicon-96x96.png"
+  },
+  "resources/front/images/favicon/favicon.ico": {
+    "file": "assets/favicon-a2313a18.ico",
+    "src": "resources/front/images/favicon/favicon.ico"
+  },
+  "resources/front/images/favicon/ms-icon-144x144.png": {
+    "file": "assets/ms-icon-144x144-001211ec.png",
+    "src": "resources/front/images/favicon/ms-icon-144x144.png"
+  },
+  "resources/front/images/favicon/ms-icon-150x150.png": {
+    "file": "assets/ms-icon-150x150-4ac38043.png",
+    "src": "resources/front/images/favicon/ms-icon-150x150.png"
+  },
+  "resources/front/images/favicon/ms-icon-310x310.png": {
+    "file": "assets/ms-icon-310x310-0fd9d195.png",
+    "src": "resources/front/images/favicon/ms-icon-310x310.png"
+  },
+  "resources/front/images/favicon/ms-icon-70x70.png": {
+    "file": "assets/ms-icon-70x70-0a8b2455.png",
+    "src": "resources/front/images/favicon/ms-icon-70x70.png"
+  },
+  "resources/front/images/footer-bg.svg": {
+    "file": "assets/footer-bg-acf5c606.svg",
+    "src": "resources/front/images/footer-bg.svg"
+  },
+  "resources/front/images/gallery/1.jpg": {
+    "file": "assets/1-ee8ab92d.jpg",
+    "src": "resources/front/images/gallery/1.jpg"
+  },
+  "resources/front/images/gallery/2.jpg": {
+    "file": "assets/2-6242aad2.jpg",
+    "src": "resources/front/images/gallery/2.jpg"
+  },
+  "resources/front/images/gallery/3.jpg": {
+    "file": "assets/3-40da32fa.jpg",
+    "src": "resources/front/images/gallery/3.jpg"
+  },
+  "resources/front/images/gallery/4.jpg": {
+    "file": "assets/4-f89af47a.jpg",
+    "src": "resources/front/images/gallery/4.jpg"
+  },
+  "resources/front/images/gallery/5.jpg": {
+    "file": "assets/5-1d561813.jpg",
+    "src": "resources/front/images/gallery/5.jpg"
+  },
+  "resources/front/images/home-banner.jpg": {
+    "file": "assets/home-banner-44a1696d.jpg",
+    "src": "resources/front/images/home-banner.jpg"
+  },
+  "resources/front/images/logo.svg": {
+    "file": "assets/logo-f33af3a2.svg",
+    "src": "resources/front/images/logo.svg"
+  },
+  "resources/front/images/logopng.png": {
+    "file": "assets/logopng-12cd9e07.png",
+    "src": "resources/front/images/logopng.png"
+  },
+  "resources/front/images/no-image-available.jpg": {
+    "file": "assets/no-image-available-5cfb04b7.jpg",
+    "src": "resources/front/images/no-image-available.jpg"
+  },
+  "resources/front/images/pro-single-banner.jpg": {
+    "file": "assets/pro-single-banner-1d806704.jpg",
+    "src": "resources/front/images/pro-single-banner.jpg"
+  },
+  "resources/front/images/reels.jpg": {
+    "file": "assets/reels-ac302950.jpg",
+    "src": "resources/front/images/reels.jpg"
+  },
+  "resources/front/images/ribbon.png": {
+    "file": "assets/ribbon-c4c0aedc.png",
+    "src": "resources/front/images/ribbon.png"
+  },
+  "resources/front/images/tackle-nostar.svg": {
+    "file": "assets/tackle-nostar-2b897825.svg",
+    "src": "resources/front/images/tackle-nostar.svg"
+  },
+  "resources/front/images/wheel/1.jpg": {
+    "file": "assets/1-aa2f2538.jpg",
+    "src": "resources/front/images/wheel/1.jpg"
+  },
+  "resources/front/images/wheel/10.jpg": {
+    "file": "assets/10-ccf73efa.jpg",
+    "src": "resources/front/images/wheel/10.jpg"
+  },
+  "resources/front/images/wheel/2.jpg": {
+    "file": "assets/2-cb548971.jpg",
+    "src": "resources/front/images/wheel/2.jpg"
+  },
+  "resources/front/images/wheel/3.jpg": {
+    "file": "assets/3-39db8562.jpg",
+    "src": "resources/front/images/wheel/3.jpg"
+  },
+  "resources/front/images/wheel/7.jpg": {
+    "file": "assets/7-81878793.jpg",
+    "src": "resources/front/images/wheel/7.jpg"
+  },
+  "resources/front/images/wheel/8.jpg": {
+    "file": "assets/8-0539c595.jpg",
+    "src": "resources/front/images/wheel/8.jpg"
+  },
+  "resources/front/images/wheel/9.jpg": {
+    "file": "assets/9-172b0445.jpg",
+    "src": "resources/front/images/wheel/9.jpg"
+  },
+  "resources/front/js/app.css": {
+    "file": "assets/app-194c7c31.css",
+    "src": "resources/front/js/app.css"
+  },
+  "resources/front/js/app.js": {
+    "assets": [
+      "assets/owl.video.play-04360456.png"
+    ],
+    "css": [
+      "assets/app-194c7c31.css"
+    ],
+    "file": "assets/app-9c03812c.js",
+    "imports": [
+      "_additional-methods.min-367bca93.js"
+    ],
+    "isEntry": true,
+    "src": "resources/front/js/app.js"
+  },
+  "resources/front/scss/style.scss": {
+    "file": "assets/style-c0d8dcf9.css",
+    "isEntry": true,
+    "src": "resources/front/scss/style.scss"
+  },
+  "resources/front/webfonts/fa-brands-400.eot": {
+    "file": "assets/fa-brands-400-e4299464.eot",
+    "src": "resources/front/webfonts/fa-brands-400.eot"
+  },
+  "resources/front/webfonts/fa-brands-400.svg": {
+    "file": "assets/fa-brands-400-a3b98177.svg",
+    "src": "resources/front/webfonts/fa-brands-400.svg"
+  },
+  "resources/front/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-cda59d6e.ttf",
+    "src": "resources/front/webfonts/fa-brands-400.ttf"
+  },
+  "resources/front/webfonts/fa-brands-400.woff": {
+    "file": "assets/fa-brands-400-f9217f66.woff",
+    "src": "resources/front/webfonts/fa-brands-400.woff"
+  },
+  "resources/front/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-8ea87917.woff2",
+    "src": "resources/front/webfonts/fa-brands-400.woff2"
+  },
+  "resources/front/webfonts/fa-regular-400.eot": {
+    "file": "assets/fa-regular-400-79d08806.eot",
+    "src": "resources/front/webfonts/fa-regular-400.eot"
+  },
+  "resources/front/webfonts/fa-regular-400.svg": {
+    "file": "assets/fa-regular-400-be0a0849.svg",
+    "src": "resources/front/webfonts/fa-regular-400.svg"
+  },
+  "resources/front/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-e8711bbb.ttf",
+    "src": "resources/front/webfonts/fa-regular-400.ttf"
+  },
+  "resources/front/webfonts/fa-regular-400.woff": {
+    "file": "assets/fa-regular-400-cb9e9e69.woff",
+    "src": "resources/front/webfonts/fa-regular-400.woff"
+  },
+  "resources/front/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-e42a8844.woff2",
+    "src": "resources/front/webfonts/fa-regular-400.woff2"
+  },
+  "resources/front/webfonts/fa-solid-900.eot": {
+    "file": "assets/fa-solid-900-373c04fd.eot",
+    "src": "resources/front/webfonts/fa-solid-900.eot"
+  },
+  "resources/front/webfonts/fa-solid-900.svg": {
+    "file": "assets/fa-solid-900-9674eb1b.svg",
+    "src": "resources/front/webfonts/fa-solid-900.svg"
+  },
+  "resources/front/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-af639750.ttf",
+    "src": "resources/front/webfonts/fa-solid-900.ttf"
+  },
+  "resources/front/webfonts/fa-solid-900.woff": {
+    "file": "assets/fa-solid-900-3f6d3488.woff",
+    "src": "resources/front/webfonts/fa-solid-900.woff"
+  },
+  "resources/front/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-9834b82a.woff2",
+    "src": "resources/front/webfonts/fa-solid-900.woff2"
+  }
+}

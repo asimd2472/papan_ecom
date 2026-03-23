@@ -1,0 +1,666 @@
+@media only screen and (max-width: 2560px) {
+}
+
+@media only screen and (max-width: 1920px) {
+}
+
+@media only screen and (max-width: 1660px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+
+@media only screen and (max-width: 1366px) {
+    html {
+        font-size: 0.875rem;
+    }
+    .banSlogan {
+        h2 {
+            font-size: 5.125rem;
+        }
+        .banSloganInner {
+            max-width: 37.625rem;
+            .banSlogan h4 {
+                font-size: 3rem;
+            }
+        }
+    }
+    .homeBanner {
+        &:after {
+            height: 10.188rem;
+        }
+    }
+    .galleryBox {
+        a {
+            height: 16.25rem;
+            span {
+                font-size: 1.6rem;
+            }
+        }
+        &.gbMid {
+            a {
+                height: 33.5rem;
+            }
+        }
+    }
+    .navigation {
+        padding: 0 1.5rem 0 3rem;
+        > ul {
+            > li {
+                &:not(:last-child) {
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px) {
+    .hamburger {
+        position: absolute;
+        left: calc(100% + 15px);
+        z-index: 2;
+        top: 26px;
+        display: block;
+        border: none;
+        background-color: transparent;
+        width: 36px;
+        span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background: #fff;
+            margin: 4px 0;
+            transition: all ease-in-out 0.4s;
+            position: relative;
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1204px) {
+}
+
+@media only screen and (max-width: 1135px) {
+}
+
+@media only screen and (max-width: 1100px) {
+}
+
+@media only screen and (max-width: 1078px) {
+    header {
+        position: fixed !important;
+        padding: 0;
+        top: 0;
+        .headerInside {
+            backdrop-filter: unset;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+}
+
+@media only screen and (max-width: 991px) {
+    .listLeft {
+        flex: 0 0 13rem;
+        max-width: 13rem;
+    }
+    .listLeftInner {
+        border: #ebebeb 1px solid;
+        border-bottom: none;
+        position: sticky;
+        top: 7rem;
+        ul {
+            ul {
+                padding: 1.25rem 0.938rem;
+                display: none;
+                li {
+                    a {
+                        padding: 0;
+                        &:hover {
+                            padding: 0 0 0 1.125rem;
+                        }
+                    }
+                }
+            }
+        }
+        > ul {
+            > li {
+                > a {
+                    font-size: 1rem;
+                    padding: 0 0.5rem;
+                }
+            }
+        }
+    }
+    .accessoriesBox {
+        font-size: 1.25rem;
+    }
+
+    .navigation {
+        padding: 0 1.5rem 0 1rem;
+        > ul {
+            > li {
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+                > a {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+    .loginReg {
+        > ul {
+            > li {
+                > a {
+                    width: 2rem;
+                    height: 2rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+
+    .container-fluid {
+        padding-right: var(--bs-gutter-x, 0.75rem);
+        padding-left: var(--bs-gutter-x, 0.75rem);
+    }
+}
+
+@media only screen and (max-width: 960px) {
+}
+
+@media only screen and (max-width: 910px) {
+}
+
+@media only screen and (max-width: 900px) {
+}
+
+@media only screen and (max-width: 885px) {
+    .homeBanner {
+        height: 43rem;
+        &:after {
+            height: 6.188rem;
+        }
+    }
+    .galleryBox {
+        a {
+            height: 11.25rem;
+        }
+        &.gbMid {
+            a {
+                height: 23.6rem;
+            }
+        }
+    }
+    .aboutContent {
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 1.175rem;
+            line-height: 1.3;
+        }
+    }
+    .topFooter {
+        .newslater {
+            padding: 1.5rem 0 0rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 884px) {
+}
+
+@media only screen and (max-width: 834px) {
+    .navigation {
+        > ul {
+            > li {
+                &:not(:last-child) {
+                    margin-right: 1.3rem;
+                }
+            }
+        }
+    }
+    .overviewArea {
+        .nav-tabs {
+            > .nav-item {
+                > .nav-link {
+                    font-size: 1rem;
+                    padding: 0.5rem 3rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+}
+
+@media only screen and (max-width: 768px) {
+    .loginReg {
+        margin-right: 4.5rem;
+    }
+    /*--nav--*/
+    .menu-responsive {
+        background: none;
+        border: medium none;
+        cursor: pointer;
+        display: block;
+        left: -55px;
+        padding: 9px 6px 6px;
+        z-index: 99999;
+        position: absolute;
+        top: 26px;
+    }
+    .menu-responsive:focus {
+        outline: none;
+    }
+    .menu-responsive.menu_responsiveTo {
+        background: #007cc2;
+        left: 200px;
+        top: 5px;
+    }
+    .menu-responsive span,
+    .menu_responsiveTo span {
+        background: $bg-6;
+        display: block;
+        height: 3px;
+        margin-bottom: 3px;
+        width: 37px;
+    }
+    .navigation {
+        margin: 0;
+        background: $bg-6;
+        display: block;
+        position: fixed !important;
+        height: 100%;
+        top: 0;
+        right: 0;
+        transition: all 300ms ease-out;
+        transform: translateX(260px);
+        width: 260px;
+        z-index: 9999;
+        text-align: left;
+        padding: 2rem 0;
+        &.left0 {
+            transform: translateX(0px);
+            box-shadow: 26px 0 22px 41px rgba(0, 0, 0, 0.5);
+            .menu-responsive {
+                left: auto;
+                right: 0;
+                span {
+                    background: $bg-1;
+                }
+            }
+        }
+        ul {
+            li {
+                width: 100%;
+                position: relative;
+                // &:not(:last-child){
+                //     border-bottom: 1px solid #eee;
+                // }
+                a {
+                    display: block;
+                    color: $bg-1;
+                    line-height: 42px;
+                    padding: 0 15px;
+                    text-align: left;
+                }
+                &.holiday-sale {
+                    a {
+                        color: $bg-6;
+                    }
+                }
+            }
+            &.d-flex {
+                width: 100%;
+                display: block !important;
+            }
+        }
+    }
+    .menu_responsiveTo {
+        span {
+            opacity: 0;
+        }
+        &:after {
+            position: absolute;
+            content: "x";
+            top: -1px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            color: #fff;
+            font-size: 21px;
+        }
+    }
+    header {
+        backdrop-filter: unset;
+        background: rgba(26, 59, 104, 0.5);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .listLeft {
+        position: fixed;
+        top: calc(100% - 2.9rem);
+        left: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+        z-index: 9;
+        transition: all ease-in-out 0.4s;
+        padding: 0;
+        &.open {
+            transform: translateY(-100%);
+            top: 100%;
+        }
+        .listLeftInner {
+            background: #fff;
+            margin-top: 0.5rem;
+        }
+        .listToggleBtn {
+            max-width: 150px;
+            text-align: center;
+            border: none;
+            background: $bg-1;
+            color: $bg-6;
+            font-weight: bold;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 0 auto;
+            display: block;
+            white-space: nowrap;
+        }
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    .aboutImg {
+        max-width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    // .about{
+    //     .col-auto
+    // }
+}
+
+@media only screen and (max-width: 667px) {
+    header {
+        .logo {
+            width: 140px;
+        }
+    }
+    .hamburger {
+        top: 21px;
+    }
+    .customer-dashboard-lft {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .mobile-menu {
+        position: relative;
+        background-color: transparent;
+        border: none;
+        .sidebar-menu {
+            display: block;
+        }
+        .mobile-sidebar {
+            top: 100%;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 15px;
+            display: none;
+            border: #eaeaea 1px solid;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .badgeContainer {
+        h4 {
+            font-size: 1.125rem;
+        }
+    }
+    .reviewBox {
+        .starsIconRatingcontainer {
+            .score {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .reviewBox .rtMiddleBar {
+        flex: 1 0 0%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+}
+
+@media only screen and (max-width: 545px) {
+}
+
+@media only screen and (max-width: 480px) {
+    .menu-responsive,
+    .menu_responsiveTo {
+        span {
+            height: 2px;
+            width: 29px;
+        }
+    }
+    .menu-responsive {
+        top: 29px;
+    }
+
+    .listRightInnerTop {
+        padding: 1rem;
+    }
+    .shopBox,
+    .accessoriesBox {
+        padding: 1rem;
+        font-size: 1rem;
+        span {
+            margin-top: 0.5rem;
+        }
+    }
+    .singleProductBanner {
+        height: 12rem;
+    }
+    .singleProduct {
+        margin-top: 0;
+    }
+    .singleProduct {
+        .singleProductInner {
+            padding: 1rem 0;
+            border-radius: 0;
+        }
+    }
+    .singleProductRight {
+        h2 {
+            font-size: 1.8rem;
+        }
+    }
+    .sprTop {
+        ul {
+            li {
+                .btn {
+                    font-size: 0.813rem;
+                }
+            }
+        }
+        .inpCartWist {
+            &:first-child {
+                margin-bottom: 1rem;
+            }
+        }
+        .addToCartBtn {
+            padding: 0 1rem;
+            line-height: 3rem;
+        }
+        .wishListBtn {
+            padding: 0 1rem;
+            line-height: 2.85rem;
+        }
+    }
+    .overviewArea {
+        .nav-item .nav-link,
+        .nav-tabs .nav-link {
+            -webkit-transition: all 300ms ease 0s;
+            -moz-transition: all 300ms ease 0s;
+            -o-transition: all 300ms ease 0s;
+            -ms-transition: all 300ms ease 0s;
+            transition: all 300ms ease 0s;
+        }
+        .nav-tabs {
+            > .nav-item {
+                > .nav-link {
+                    font-size: 1rem;
+                    padding: 0.5rem 1rem;
+                }
+            }
+        }
+    }
+    .returnInner {
+        padding: 2rem 1rem;
+    }
+
+    .sprTop {
+        .number-input {
+            button {
+                height: 2.8rem;
+            }
+
+            input[type="number"] {
+                height: 2.8rem;
+            }
+        }
+    }
+    footer {
+        &:after {
+            top: -1px;
+        }
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .shopBox {
+        p {
+            font-size: 1rem;
+        }
+    }
+    .banSlogan {
+        padding: 0 2rem;
+        h2 {
+            font-size: 3rem;
+        }
+        h4 {
+            font-size: 2.125rem;
+        }
+    }
+    .p-h-40 {
+        padding: 0 0.8rem;
+    }
+    .galleryBox {
+        a {
+            height: 6.7rem;
+            span {
+                font-size: 1rem;
+            }
+        }
+        &.gbMid {
+            a {
+                height: 13.62rem;
+            }
+        }
+    }
+    .gallery {
+        .g-3,
+        .gy-3 {
+            --bs-gutter-y: 0.2rem;
+        }
+        .g-3,
+        .gx-3 {
+            --bs-gutter-x: 0.2rem;
+        }
+    }
+    .about {
+        padding: 2rem 0;
+        .col-auto {
+            order: -1;
+            margin-bottom: 1.25rem;
+        }
+    }
+    .aboutContent {
+        padding: 0;
+    }
+    .topFooter {
+        .col-auto {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .fNav {
+            padding: 1rem 0 1rem;
+            ul {
+                li {
+                    &:not(:last-child) {
+                        margin-right: 0.8rem;
+                    }
+                    a {
+                        font-size: 0.813rem;
+                    }
+                }
+            }
+        }
+        .fLogo {
+            max-width: 10rem;
+            margin: 0 auto;
+            a {
+                padding: 3rem 1rem 2rem;
+            }
+        }
+        .contAddress {
+            margin-bottom: 1rem;
+            ul {
+                flex-wrap: wrap;
+                li {
+                    &:not(:last-child) {
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        &:after {
+            height: 2.625rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 414px) {
+}
+
+@media only screen and (max-width: 384px) {
+}
+
+@media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 320px) {
+}
+
+@media only screen and (max-width: 240px) {
+}

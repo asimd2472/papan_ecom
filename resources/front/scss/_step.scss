@@ -1,0 +1,86 @@
+// New Step Start
+.checkout-step-wrap {
+    margin-bottom: 2rem;
+	ul {
+		display: flex;
+		li {
+			flex: 1 0;
+			position: relative;
+			&:not(:last-child) {
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					width: 100%;
+					height: 6px;
+					top: 20px;
+					left: calc(50% + 20px);
+					background: $color4;
+					z-index: -1;
+				}
+			}
+			.process-step-cont {
+				font-size: 1rem;
+				text-transform: capitalize;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				align-content: space-between;
+				.process-step-number {
+					display: block;
+					width: 44px;
+					height: 44px;
+					line-height: 44px;
+					border-radius: 50%;
+					text-align: center;
+					background-color: $color4;
+					color: $bg-6;
+					font-size: 1.875rem;
+					font-weight: 500;
+				}
+				.process-step-lebel {
+					color: $tertiary;
+					font-weight: 500;
+					width: 100%;
+					text-align: center;
+                    font-size: 1.5rem;
+                    font-family: "Khand";
+				}
+			}
+			&.is-active {
+				&:not(:last-child) {
+					&::after {
+						background: rgba($color4, 1);
+						background: linear-gradient(-90deg, rgba($color4, 1) 0%, rgba($bg-2, 1) 93%, rgba($bg-2, 1) 100%);
+					}
+				}
+				.process-step-cont {
+					.process-step-number {
+						background-color: $bg-2;
+					}
+					.process-step-lebel {
+						color: $bg-2;
+					}
+				}
+			}
+			&.is-done {
+				&:not(:last-child) {
+					&::after {
+						background: rgba($bg-2, 1);
+						background: linear-gradient(-90deg, rgba($bg-2, 1) 0%, rgba($bg-2, 1) 93%, rgba($bg-2, 1) 100%);
+					}
+				}
+				.process-step-cont {
+					.process-step-number {
+						background-color: $bg-2;
+					}
+					.process-step-lebel {
+						color: $bg-2;
+					}
+				}
+			}
+		}
+	}
+}
+// New Step End

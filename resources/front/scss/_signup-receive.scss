@@ -1,0 +1,61 @@
+.signupReceive {
+    .modal-header {
+        display: block;
+    }
+    .btn-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+    }
+    .modal-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    text-align: center;
+    .modal-body {
+        padding: 0;
+    }
+    .popupBody {
+        h3 {
+            margin: 0;
+            padding: 1rem;
+            background: $bg-1;
+            color: $bg-6;
+            font-size: 3rem;
+        }
+    }
+    .YourOrder {
+        padding: 2rem 3rem;
+        h5 {
+            font-weight: bold;
+            font-size: 1.563rem;
+        }
+        .enteremail {
+            height: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+        }
+        .signMeUp {
+            @include mainBtn2;
+            display: block;
+            width: 100%;
+            border-radius: 6px;
+        }
+        h6 {
+            margin: 1rem 0;
+            a {
+                color: $bg-3;
+                text-decoration: underline;
+                font-weight: bold;
+                font-size: 1rem;
+                &:hover {
+                    color: $bg-2;
+                }
+            }
+        }
+        p {
+            font-size: 0.875rem;
+        }
+    }
+}

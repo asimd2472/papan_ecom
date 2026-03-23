@@ -1,0 +1,81 @@
+footer {
+  background: url("../../assets/images/common-image/map.png") #fff;
+}
+
+.footerTop {
+  padding: 4rem 0 1rem;
+}
+.footerTop .footerBoxLogo img {
+  max-width: 270px;
+  width: 100%;
+}
+.footerTop .footerBoxLogo ul li:not(:last-child) {
+  margin-right: 0.85rem;
+}
+.footerTop .footerBoxLogo ul li a {
+  color: #2f2f2f;
+  font-size: 1.6rem;
+}
+
+.footerBox ul li:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+.footerBox ul li a {
+  color: #2f2f2f;
+  font-size: 1.125rem;
+  font-family: "Proxima Nova Rg";
+}
+.footerBox ul li a:hover {
+  color: #01c28d;
+}
+
+.footerBtm {
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 13px;
+  padding: 0.6rem 0;
+}
+.footerBtm ul li {
+  position: relative;
+}
+.footerBtm ul li:not(:last-child) {
+  margin-right: 20px;
+}
+.footerBtm ul li:not(:last-child)::after {
+  content: "";
+  height: 12px;
+  width: 1px;
+  background-color: #dadada;
+  position: absolute;
+  right: -10px;
+  top: 3px;
+}
+.footerBtm ul li a {
+  font-size: 11px;
+  color: #fff;
+  display: block;
+}
+.footerBtm ul li a:hover {
+  color: #4dd4af;
+}
+
+.footerBoxContact ul {
+  margin-bottom: 30px;
+}
+.footerBoxContact ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footerBoxContact ul li a {
+  font-size: 22px;
+  color: #333;
+}
+.footerBoxContact ul li a i {
+  color: #01c28d;
+  margin-right: 5px;
+}
+.footerBoxContact ul li a:hover {
+  color: #01c28d;
+}
+.footerBoxContact p:not(:last-child) {
+  margin-bottom: 15px;
+}/*# sourceMappingURL=Footer.css.map */

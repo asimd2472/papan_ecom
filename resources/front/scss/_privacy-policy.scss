@@ -1,0 +1,32 @@
+.privacyPolicy {
+    h3 {
+        font-size: 1.625rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        border-bottom: $bg-2 4px double;
+        margin-bottom: 4rem;
+        padding-bottom: 1rem;
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: 1.25rem;
+    }
+    ul {
+        margin-bottom: 1.25rem;
+    }
+    li {
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        position: relative;
+        padding-left: 1.125rem;
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}

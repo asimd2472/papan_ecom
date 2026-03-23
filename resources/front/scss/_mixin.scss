@@ -1,0 +1,123 @@
+@mixin mainBtn {
+    color: $bg-1;
+    font-size: 1.25rem;
+    background: $bg-2;
+    border: none;
+    line-height: 3.75rem;
+    padding: 0 2rem;
+    border-radius: 0.625rem;
+    font-family: "Khand";
+    font-weight: 600;
+    display: inline-block;
+
+    &:hover {
+        color: $bg-2;
+        background: $bg-1;
+    }
+}
+@mixin mainBtn-2 {
+    color: $bg-2;
+    font-size: 1.25rem;
+    background: $bg-1;
+    border: none;
+    line-height: 3.75rem;
+    padding: 0 2rem;
+    border-radius: 0.625rem;
+    font-family: "Khand";
+    font-weight: 600;
+    display: inline-block;
+
+    &:hover {
+        color: $bg-1;
+        background: $bg-2;
+    }
+}
+
+@mixin mainBtn2 {
+    color: $bg-6;
+    font-size: 1rem;
+    background: $bg-1;
+    border: none;
+    line-height: 2.6rem;
+    padding: 0 2rem;
+    border-radius: 30px;
+    font-weight: 800;
+    display: inline-block;
+    font-family: "Khand";
+    &:hover {
+        color: $bg-1;
+        background: $bg-2;
+    }
+}
+
+@mixin bdrBtn {
+    font-size: 1.25rem;
+    padding: 0 2rem;
+    color: $bg-2;
+    position: relative;
+    background: transparent;
+    border: 1px solid $bg-2;
+    z-index: 1;
+    overflow: hidden;
+    line-height: 2.6rem;
+    display: block;
+    font-family: "Khand";
+
+    &:hover {
+        color: #fff;
+        border-color: $bg-2;
+        background: $bg-2;
+    }
+
+    &:focus,
+    &:focus::after {
+        outline: none;
+    }
+}
+@mixin input {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0 30px;
+    color: #464648;
+    background-color: transparent !important;
+    border-color: #464648;
+    border-radius: 30px;
+    &:focus,
+    &:focus::after {
+        outline: none;
+        box-shadow: none;
+        border-color: #464648;
+    }
+}
+
+@mixin input-4 {
+    display: block;
+    width: 100%;
+    padding: 0 0.75rem;
+    font-family: "Montserrat";
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff !important;
+    background-color: transparent;
+    border: #fff 2px solid;
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+@mixin logreg{
+    height: 3rem;
+    border-radius: 6px;
+}

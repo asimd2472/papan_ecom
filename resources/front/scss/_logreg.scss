@@ -1,0 +1,74 @@
+.input-wrap{
+    .input-style{
+        @include logreg();
+        @include placeholder();
+    }
+}
+.select-wrap{
+    .select-style{
+        @include logreg();
+    }
+}
+.ldl-style{
+    font-weight: 500;
+    font-family: "Khand";
+}
+.add-icon {
+    position: relative;
+    .icon-rt{
+        position: absolute;
+        right: 1rem;
+        top: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .input-style {
+        padding-right: 2.5rem;
+    }
+}
+.signin-wrap{
+    .signin{
+        @include mainBtn2();
+        width: 100%;
+        text-transform: capitalize;
+        border-radius: 6px;
+    }
+}
+.forgot-wrap{
+    ul{
+        display: flex;
+        justify-content: space-between;
+        li{
+            &.checkbox{
+                line-height: 1;
+            }
+            a{
+                color: #27272a;
+                text-decoration: underline;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.not-account {
+    text-align: center;
+    border-top: 1px solid #ced4da;
+    padding-top: 1rem;
+    margin: 1rem 0;
+    h4{
+        font-size: 1rem;
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
+    p{
+        line-height: 1;
+        a{
+            color: #11c7f7;
+            text-decoration: underline;
+        }
+    }
+}

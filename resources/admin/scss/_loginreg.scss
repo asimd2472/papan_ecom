@@ -1,0 +1,151 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+// input:-webkit-autofill::first-line {
+//     font-size: 24px;
+// }
+.login-reg-sec{
+    min-height: 100vh;
+    background-size: cover !important;
+    &.blk-overly{
+        position: relative;
+        z-index: 1;
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba($color: $black, $alpha: 0.5);
+            z-index: -1;
+        }
+    }
+    .loginbg-lft{
+        height: 100%;
+        text-align: center;
+        .lft-logo{
+            max-width: 17%;
+            display: block;
+            margin: 0 auto 1rem;
+        }
+        h3{
+            color: #fff;
+            font-size: 1.75rem;
+            text-transform: capitalize;
+        }
+        p{
+            color: #fff;
+            font-size: 1rem;
+        }
+    }
+    .loginwrap-rgt{
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 80px 50px;
+        height: 100%;
+        border-radius: 2rem;
+        .logreg-head {
+            margin: 1.25rem 0;
+            h4{
+                font-size: 1.25rem;
+                text-transform: uppercase;
+                padding-bottom: 0;
+                text-align: center;
+                color: $white;
+            }
+            p{
+                color: $white;
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+.add-icon-lft {
+    .icon-lft{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $white;
+        display: block;
+        line-height: 1;
+        font-size: 1rem;
+    }
+    .input-style-log {
+        padding-left: 2.5rem;
+        border-color: rgba($color: $white, $alpha: 1);
+        color: $white;
+        &::placeholder{
+            color: rgba($color: $white, $alpha: 0.5);
+        }
+    }
+}
+.add-icon-rgt {
+    .icon-rgt{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $white;
+        display: block;
+        line-height: 1;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .input-style-log {
+        padding-right: 2.313rem;
+    }
+}
+.login-checkbox{
+    input{
+        &[type="checkbox"]{
+            +{
+                label{
+                    line-height: 1;
+                    color: #fff;
+                    font-size: 0.875rem;
+                    &::before{
+                        background-color: transparent;
+                        border-color: $white !important;
+                    }
+                    &::after{
+                        color: $white;
+                        padding-top: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+.log-reg-submit-wrap{
+    margin-top: 3.125rem;
+    text-align: center;
+    .log-reg-submit-btn{
+        text-transform: uppercase;
+        font-size: 1rem;
+        background-color: $darkpurple;
+        color: $white;
+        padding: 0 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        border: none;
+        &:hover{
+            background-color: $purple;
+            color: $white;
+        }
+    }
+}
+.forget-pass-wrap {
+    .forget-pass-btn{
+        color: $white;
+    }
+}

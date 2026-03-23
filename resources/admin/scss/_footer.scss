@@ -1,0 +1,22 @@
+.site-footer{
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    background-color: $white;
+}
+.copyright-text {
+    color: $colortertiary;
+    font-size: 0.875rem;
+    a{
+        color: $color2;
+        font-weight: 600;
+    }
+}
+.develope-text {
+    color: $colortertiary;
+    font-size: 0.875rem;
+    text-transform: capitalize;
+    a{
+        color: $color2;
+        font-weight: 600;
+    }
+}

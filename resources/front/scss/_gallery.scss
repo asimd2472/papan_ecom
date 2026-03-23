@@ -1,0 +1,46 @@
+.galleryBox {
+    &:not(:last-child) {
+        margin-bottom: 1.65rem;
+    }
+    a {
+        height: 20.25rem;
+        display: block;
+        position: relative;
+        background-size: cover !important;
+        text-align: center;
+
+        span {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $bg-6;
+            font-family: "Khand";
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            width: 100%;
+        }
+        &:before {
+            background: rgba(19, 63, 117, 0.38);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transition: all ease-in-out 0.4s;
+        }
+        &:hover {
+            &:before {
+                background: rgba(19, 63, 117, 0.78);
+            }
+        }
+    }
+    &.gbMid {
+        a {
+            height: 41.6rem;
+        }
+    }
+}

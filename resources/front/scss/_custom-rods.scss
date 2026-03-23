@@ -1,0 +1,26 @@
+.gridContainer {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    grid-auto-flow: dense;
+    .item {
+        background: #efefef;
+        display: flex;
+        justify-content: center;
+        padding: .5rem;
+        img {
+            max-width: 100%;
+            height: 10rem;
+            display: inline-block;
+        }
+    }
+    .item.portrait {
+        grid-row: auto / span 2;
+    }
+}
+
+.gridTopBtn {
+    position: absolute;
+    right: 0;
+    top: -4rem;
+}

@@ -1,0 +1,183 @@
+/* Start Menu */
+
+@import "variable";
+header {
+    width: 100%;
+    z-index: 3;
+    transition: all 300ms ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    background: rgba(26, 59, 104, 0.3);
+    .logo {
+        width: 6.50rem;
+        a {
+            display: block;
+            padding: 5px 0px;
+            // background: $bg-6;
+            // border-radius: 0 0 0.938rem 0.938rem;
+            img {
+                display: block;
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+    // .headerInside {
+    //     padding: 0.6rem 1rem;
+    // }
+    .mobNavLogin {
+        display: none;
+    }
+}
+
+.headerInner {
+    position: static;
+    padding: 1rem 2rem;
+}
+
+header.sticky {
+    top: 0;
+    position: fixed;
+    z-index: 3;
+    border-bottom: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+}
+
+.menu-responsive {
+    display: none;
+}
+
+.navigation {
+    padding: 0 3rem;
+    >ul {
+        // display: flex;
+        >li {
+            &:not(:last-child) {
+                margin-right: 4rem;
+            }
+            >a {
+                color: $bg-6;
+                font-size: 1.1rem;
+                display: block;
+                text-align: center;
+                white-space: nowrap;
+                position: relative;
+                padding: 8px 0;
+                letter-spacing: 1px;
+                font-family: "Khand";
+                font-weight: 600;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background: $bg-6;
+                    transform: scale(0, 1);
+                    transform-origin: right;
+                    transition: transform 0.4s ease;
+                    height: 1px;
+                    width: 100%;
+                }
+                &:hover,
+                &.active {
+                    &::after {
+                        -webkit-transform: scale(1, 1);
+                        -ms-transform: scale(1, 1);
+                        -o-transform: scale(1, 1);
+                        transform: scale(1, 1);
+                        transform-origin: left;
+                    }
+                }
+            }
+            &.holiday-sale {
+                position: relative;
+                a {
+                    background-color: $bg-1;
+                    padding: 8px;
+                    border-radius: 0.25rem;
+                }
+                .sale-ribbin {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    max-width: 100px;
+                    z-index: 1;
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.loginReg {
+    >ul {
+        >li {
+            &:not(:last-child) {
+                margin-right: 0.5rem;
+            }
+            >a {
+                color: $bg-6;
+                background: $bg-1;
+                width: 2.5rem;
+                height: 2.5rem;
+                text-align: center;
+                line-height: 2.5rem;
+                border-radius: 50%;
+                position: relative;
+                &.cartIcon {
+                    background: $bg-2;
+                }
+                >span {
+                    position: absolute;
+                    top: 0;
+                    right: -6px;
+                    background: $bg-6;
+                    color: $bg-1;
+                    height: 1.125rem;
+                    width: 1.125rem;
+                    display: block;
+                    line-height: 1.125rem;
+                    border-radius: 50%;
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.my-account-wrap {
+    position: relative;
+    .after-login {
+        position: absolute;
+        right: 0;
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 200px;
+        box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+        li {
+            a {
+                color: #041541;
+                text-align: left;
+                position: relative;
+                padding: 0.5rem 1.5rem;
+                border-radius: 0;
+                display: block;
+                text-transform: capitalize;
+                i {
+                    margin-right: 0.5rem;
+                }
+                &:hover {
+                    color: #11c7f7;
+                    background: #ebebeb;
+                }
+            }
+        }
+    }
+}

@@ -199,41 +199,21 @@ class ProductsController extends Controller
     }
 
 
-    public function product_listing_bybrand($category_slug, $type_id, $brand_id){
+    public function product_listing_bybrand($category_slug){
 
         $title = '';
 
-        if($type_id!=' '){
-            $type_id = base64_decode($type_id);
-
-            $products = Product::with(['productCategory' => fn($query) => $query->where('status', 1)->where('slug', $category_slug)])
-                ->whereHas('productCategory', fn ($query) =>
-                    $query->where('slug', $category_slug)
-            )->where('type_id', $type_id)->where('brand_id', $brand_id)->get();
-
-            $singleProducttype = Producttype::where('id', $type_id)->first();
-            // dd($products);
-        }else{
+        $products = Product::with(['productCategory' => fn($query) => $query->where('status', 1)->where('slug', $category_slug)])
+            ->whereHas('productCategory', fn ($query) =>
+                $query->where('slug', $category_slug)
+        )->where('brand_id', $brand_id)->get();
 
 
-            $products = Product::with(['productCategory' => fn($query) => $query->where('status', 1)->where('slug', $category_slug)])
-                ->whereHas('productCategory', fn ($query) =>
-                    $query->where('slug', $category_slug)
-            )->where('brand_id', $brand_id)->get();
-
-            // dd($products);
-
-            $singleProducttype = array();
-        }
-
-
-        $categoryandType = ProductCategory::with('producttype')->where('status', 1)->get();
-        $brand = Brand::limit(10)->get();
         $singleCategory = ProductCategory::where('slug', $category_slug)->first();
 
-        // dd($products->toArray());
+        dd($products->toArray());
 
-        return view('product_list', compact('title', 'products', 'categoryandType', 'brand', 'singleProducttype', 'singleCategory'));
+        return view('product_list', compact('title', 'products', 'singleCategory'));
 
     }
 

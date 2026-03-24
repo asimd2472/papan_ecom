@@ -1,16 +1,9 @@
 @extends('layouts.app') @section('content')
 
-<section
+<!-- <section
     class="productListBanner"
     style="background: url({{ Vite::asset('resources/front/images/pro-single-banner.jpg')}}) center center no-repeat"
 >
-    <!-- <div class="banSlogan">
-    <div class="banSloganInner wow fadeInUp delay1">
-        <h2>Lorem Ipsum</h4>
-            <h4>is simply dummy text of the printing.</h4>
-            <a href="#">Became a Dealer</a>
-    </div>
-</div> -->
     <svg
         class="waves"
         xmlns="http://www.w3.org/2000/svg"
@@ -47,12 +40,12 @@
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
     </svg>
-</section>
+</section> -->
 
 <section class="productList">
     <div class="container-fluid">
         <div class="row">
-            <div class="listLeft">
+            <!-- <div class="listLeft">
                 <button type="button" class="listToggleBtn">
                     Product List
                 </button>
@@ -66,7 +59,7 @@
                         @include('categoryleftpanel')
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <div class="listRight">
                 <div class="listRightInner">
                     @if (!empty($singleProducttype))
@@ -85,19 +78,15 @@
                         <div class="row justify-content-center g-3">
                             @foreach ($products as $productsItem)
                             <div
-                                class="col-lg-4 col-md-4 col-sm-6 col-6 wow fadeInUpSort delay1"
+                                class="col-lg-3 col-md-3 col-sm-6 col-6 wow fadeInUpSort delay1"
                             >
                                 <a
                                     href="{{ route('product_details', ['product_slug' => $productsItem->product_slug])}}"
                                     class="shopBox"
                                 >
-                                    @if($productsItem->main_image_name!='') <img
-                                    src="{{asset("upload/product/images/".rawurlencode($productsItem->main_image_name))
-
-
-
-                                    }}" alt="{{$productsItem->product_title}}"
-                                    /> @else
+                                    @if($productsItem->main_image_name!='') 
+                                    <img src="{{asset("upload/product/images/".rawurlencode($productsItem->main_image_name))}}" alt="{{$productsItem->product_title}}"/> 
+                                    @else
                                     <img
                                         src="{{ Vite::asset('resources/front/images/no-image-available.jpg')}}"
                                         alt="no-image-available.jpg"
@@ -491,32 +480,6 @@
                         </div>
                     </div>
                     --}}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="weCarry">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center secTitle">
-                    <h2>WE CARRY</h2>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="owl-carousel partnerSlider">
-                    @foreach ($brand as $branditem)
-                    <div class="item">
-                        <div class="partnerSliderBox">
-                            <img
-                                src="{{asset('storage/images/'.$branditem->brandimage)}}"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                    @endforeach
                 </div>
             </div>
         </div>

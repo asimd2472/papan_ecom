@@ -39,7 +39,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+            <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="select-wrap">
                     <label class="lable-head">Type </label>
                     <select name="type_id" id="type_id" class="form-control input-style">
@@ -49,7 +49,7 @@
                         <span class="error">{{ $message }}</span>
                     @enderror
                 </div>
-            </div>
+            </div> -->
             <div class="col-xxl-12 col-lg-10 col-md-12 col-sm-12 col-12">
                 <div class="input-wrap">
                     <label class="lable-head">Select Brand</label>
@@ -160,7 +160,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="input-wrap">
                                 <label class="lable-head">Type <sup class="star-mark">*</sup></label>
-                                <input type="text" class="form-control input-style required_field" name="attribute[0][attribute_name]" id="" placeholder="e.g : Profishiency Casting Reels">
+                                <input type="text" class="form-control input-style required_field" name="attribute[0][attribute_name]" id="" placeholder="e.g : Size,Color">
                             </div>
                         </div>
                     </div>
@@ -234,7 +234,7 @@
             @csrf
 
 
-            <div class="col-md-3 mt-3">
+            <!-- <div class="col-md-3 mt-3">
                 <div class="input-wrap">
                     <label class="lable-head">Length (in Inches)</label>
                     <input type="text" class="form-control input-style isnumber" name="length" id="length" placeholder="Length" required>
@@ -269,7 +269,7 @@
                         <span class="error">{{ $message }}</span>
                     @enderror
                 </div>
-            </div>
+            </div> -->
 
 
             <div class="col-md-12">

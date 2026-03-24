@@ -38,7 +38,8 @@ use App\Http\Controllers\CheckoutController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product_categoty/{slug}', [ProductsController::class, 'product_categoty'])->name('product_categoty');
 Route::get('/product_listing/{category_slug}/{type_id}', [ProductsController::class, 'product_listing_bytype'])->name('product_listing_bytype');
-Route::get('/product_listing/{category_slug}/{type_id?}/{brand_id}', [ProductsController::class, 'product_listing_bybrand'])->name('product_listing_bybrand');
+// Route::get('/product_listing/{category_slug}/{type_id?}/{brand_id}', [ProductsController::class, 'product_listing_bybrand'])->name('product_listing_bybrand');
+Route::get('/product_listing/{category_slug}', [ProductsController::class, 'product_listing_bybrand'])->name('product_listing_bybrand');
 Route::get('/product-details/{product_slug}', [ProductsController::class, 'product_details'])->name('product_details');
 
 Route::get('/getattribute_items', [ProductsController::class, 'getattribute_items'])->name('getattribute_items');

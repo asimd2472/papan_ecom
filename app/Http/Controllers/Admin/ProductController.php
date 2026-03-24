@@ -143,7 +143,7 @@ class ProductController extends Controller
             }
 
             $input['category_id']=$request->category_id;
-            $input['type_id']=$request->type_id;
+            // $input['type_id']=$request->type_id;
             $input['brand_id']=$request->brand_id;
             $input['product_title']=$request->product_title;
             $input['product_slug']=Str::slug($request->product_title);
@@ -153,10 +153,10 @@ class ProductController extends Controller
             $input['main_image_id']=$request->main_image_id;
             $input['main_image_name']=$request->main_image_name;
 
-            $input['length']=$request->length;
-            $input['width']=$request->width;
-            $input['height']=$request->height;
-            $input['weight']=$request->weight;
+            // $input['length']=$request->length;
+            // $input['width']=$request->width;
+            // $input['height']=$request->height;
+            // $input['weight']=$request->weight;
 
             /* $input['product_price']=$request->product_price;
             $input['product_offerprice']=$request->product_offerprice; */

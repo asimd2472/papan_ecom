@@ -50,7 +50,7 @@
                                     <span>{{$productTypeitem->typename}}</span>
                                 </a>
                             @else --}}
-                                <a href="#" class="shopBox">
+                                <a href="{{ route('product_categoty', $productTypeitem->slug) }}" class="shopBox">
                                     <img src="{{asset('storage/images/'.$productTypeitem->categoryimage)}}" alt="{{$productTypeitem->title}}" />
                                     <span>{{$productTypeitem->title}}</span>
                                 </a>
@@ -159,6 +159,7 @@
         </div>
     </div>
     </section> --}}
+
     <section class="about">
     <div class="container-fluid">
         <div class="row align-items-center g-lg-5">

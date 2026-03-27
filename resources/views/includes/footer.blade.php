@@ -30,9 +30,9 @@
                     <div class="followUs">
                         <ul class="d-flex align-items-center">
                             <li>Follow us:</li>
-                            <li><a href="https://www.facebook.com/dragocustomrods" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                             {{-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> --}}
-                            <li><a href="https://www.instagram.com/k_huynh1220/channe" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,9 +59,9 @@
                     </div>
                     <div class="privacyPolicyLink">
                         <ul class="d-flex flex-wrap">
-                            <li><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>
-                            <li><a href="{{route('terms_and_condition')}}">Terms and Condition</a></li>
-                            <li><a href="{{route('shipping_and_return')}}">Shipping & Return Policy</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms and Condition</a></li>
+                            <li><a href="#">Shipping & Return Policy</a></li>
                         </ul>
                     </div>
                 </div>

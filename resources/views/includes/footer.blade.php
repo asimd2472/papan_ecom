@@ -24,7 +24,7 @@
                         <ul class="d-flex">
                             {{-- <li><i class="fas fa-map-marker-alt"></i> 76 Quirk RoadMilford, CT 06460</li>
                             <li><a href="#"><i class="fas fa-phone-alt"></i> 800-243-2680</a></li> --}}
-                            <li><a href="mailto:dragocustomrods@gmail.com"><i class="fas fa-envelope"></i> dragocustomrods@gmail.com</a></li>
+                            <li><a href="mailto:asd@gmail.com"><i class="fas fa-envelope"></i> asd@gmail.com</a></li>
                         </ul>
                     </div>
                     <div class="followUs">

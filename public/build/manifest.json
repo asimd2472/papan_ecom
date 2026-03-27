@@ -43,9 +43,13 @@
     "isEntry": true,
     "src": "resources/admin/css/app.css"
   },
-  "resources/admin/images/banner-login.jpg": {
-    "file": "assets/banner-login-a1946afb.jpg",
-    "src": "resources/admin/images/banner-login.jpg"
+  "resources/admin/images/@banner-login.jpg": {
+    "file": "assets/@banner-login-a1946afb.jpg",
+    "src": "resources/admin/images/@banner-login.jpg"
+  },
+  "resources/admin/images/banner-login.png": {
+    "file": "assets/banner-login-97c1c8fe.png",
+    "src": "resources/admin/images/banner-login.png"
   },
   "resources/admin/images/favicon/android-icon-144x144.png": {
     "file": "assets/ms-icon-144x144-8ac396ca.png",
@@ -109,11 +113,11 @@
   },
   "resources/admin/images/favicon/apple-icon-precomposed.png": {
     "file": "assets/apple-icon-575fa430.png",
-    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
+    "src": "resources/admin/images/favicon/apple-icon.png"
   },
   "resources/admin/images/favicon/apple-icon.png": {
     "file": "assets/apple-icon-575fa430.png",
-    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
+    "src": "resources/admin/images/favicon/apple-icon.png"
   },
   "resources/admin/images/favicon/favicon-16x16.png": {
     "file": "assets/favicon-16x16-ac5e2512.png",
@@ -445,10 +449,6 @@
     "file": "assets/2-61e69a65.svg",
     "src": "resources/front/images/2.svg"
   },
-  "resources/front/images/about.jpg": {
-    "file": "assets/about-0309ec79.jpg",
-    "src": "resources/front/images/about.jpg"
-  },
   "resources/front/images/angle-r.svg": {
     "file": "assets/angle-r-adcaf901.svg",
     "src": "resources/front/images/angle-r.svg"
@@ -457,201 +457,17 @@
     "file": "assets/ban-btm-94d87d10.svg",
     "src": "resources/front/images/ban-btm.svg"
   },
-  "resources/front/images/client-logo/1.png": {
-    "file": "assets/1-88ae2755.png",
-    "src": "resources/front/images/client-logo/1.png"
-  },
-  "resources/front/images/client-logo/10.png": {
-    "file": "assets/10-1bbb56a9.png",
-    "src": "resources/front/images/client-logo/10.png"
-  },
-  "resources/front/images/client-logo/11.png": {
-    "file": "assets/11-437217e9.png",
-    "src": "resources/front/images/client-logo/11.png"
-  },
-  "resources/front/images/client-logo/12.png": {
-    "file": "assets/12-55708496.png",
-    "src": "resources/front/images/client-logo/12.png"
-  },
-  "resources/front/images/client-logo/13.png": {
-    "file": "assets/13-75c3fcb0.png",
-    "src": "resources/front/images/client-logo/13.png"
-  },
-  "resources/front/images/client-logo/14.png": {
-    "file": "assets/14-607d7900.png",
-    "src": "resources/front/images/client-logo/14.png"
-  },
-  "resources/front/images/client-logo/15.png": {
-    "file": "assets/15-22e52bfe.png",
-    "src": "resources/front/images/client-logo/15.png"
-  },
-  "resources/front/images/client-logo/16.png": {
-    "file": "assets/16-0a6a3bc5.png",
-    "src": "resources/front/images/client-logo/16.png"
-  },
-  "resources/front/images/client-logo/2.png": {
-    "file": "assets/2-f4c39b90.png",
-    "src": "resources/front/images/client-logo/2.png"
-  },
-  "resources/front/images/client-logo/3.png": {
-    "file": "assets/3-409c3103.png",
-    "src": "resources/front/images/client-logo/3.png"
-  },
-  "resources/front/images/client-logo/4.png": {
-    "file": "assets/4-1f9d5a86.png",
-    "src": "resources/front/images/client-logo/4.png"
-  },
-  "resources/front/images/client-logo/5.png": {
-    "file": "assets/5-023c85b0.png",
-    "src": "resources/front/images/client-logo/5.png"
-  },
-  "resources/front/images/client-logo/6.png": {
-    "file": "assets/6-6e5ba11d.png",
-    "src": "resources/front/images/client-logo/6.png"
-  },
-  "resources/front/images/client-logo/7.png": {
-    "file": "assets/7-33c2db29.png",
-    "src": "resources/front/images/client-logo/7.png"
-  },
-  "resources/front/images/client-logo/8.png": {
-    "file": "assets/8-16940af3.png",
-    "src": "resources/front/images/client-logo/8.png"
-  },
-  "resources/front/images/client-logo/9.png": {
-    "file": "assets/9-95444be2.png",
-    "src": "resources/front/images/client-logo/9.png"
-  },
-  "resources/front/images/favicon/android-icon-144x144.png": {
-    "file": "assets/ms-icon-144x144-001211ec.png",
-    "src": "resources/front/images/favicon/ms-icon-144x144.png"
-  },
-  "resources/front/images/favicon/android-icon-192x192.png": {
-    "file": "assets/android-icon-192x192-f642bca7.png",
-    "src": "resources/front/images/favicon/android-icon-192x192.png"
-  },
-  "resources/front/images/favicon/android-icon-36x36.png": {
-    "file": "assets/android-icon-36x36-b6b15a34.png",
-    "src": "resources/front/images/favicon/android-icon-36x36.png"
-  },
-  "resources/front/images/favicon/android-icon-48x48.png": {
-    "file": "assets/android-icon-48x48-0b10f4f5.png",
-    "src": "resources/front/images/favicon/android-icon-48x48.png"
-  },
-  "resources/front/images/favicon/android-icon-72x72.png": {
-    "file": "assets/apple-icon-72x72-786758f6.png",
-    "src": "resources/front/images/favicon/apple-icon-72x72.png"
-  },
-  "resources/front/images/favicon/android-icon-96x96.png": {
-    "file": "assets/favicon-96x96-082a5331.png",
-    "src": "resources/front/images/favicon/favicon-96x96.png"
-  },
-  "resources/front/images/favicon/apple-icon-114x114.png": {
-    "file": "assets/apple-icon-114x114-beeb1d91.png",
-    "src": "resources/front/images/favicon/apple-icon-114x114.png"
-  },
-  "resources/front/images/favicon/apple-icon-120x120.png": {
-    "file": "assets/apple-icon-120x120-65c255b1.png",
-    "src": "resources/front/images/favicon/apple-icon-120x120.png"
-  },
-  "resources/front/images/favicon/apple-icon-144x144.png": {
-    "file": "assets/ms-icon-144x144-001211ec.png",
-    "src": "resources/front/images/favicon/ms-icon-144x144.png"
-  },
-  "resources/front/images/favicon/apple-icon-152x152.png": {
-    "file": "assets/apple-icon-152x152-cb20d293.png",
-    "src": "resources/front/images/favicon/apple-icon-152x152.png"
-  },
-  "resources/front/images/favicon/apple-icon-180x180.png": {
-    "file": "assets/apple-icon-180x180-259288f9.png",
-    "src": "resources/front/images/favicon/apple-icon-180x180.png"
-  },
-  "resources/front/images/favicon/apple-icon-57x57.png": {
-    "file": "assets/apple-icon-57x57-760ff4fc.png",
-    "src": "resources/front/images/favicon/apple-icon-57x57.png"
-  },
-  "resources/front/images/favicon/apple-icon-60x60.png": {
-    "file": "assets/apple-icon-60x60-a2e8caf0.png",
-    "src": "resources/front/images/favicon/apple-icon-60x60.png"
-  },
-  "resources/front/images/favicon/apple-icon-72x72.png": {
-    "file": "assets/apple-icon-72x72-786758f6.png",
-    "src": "resources/front/images/favicon/apple-icon-72x72.png"
-  },
-  "resources/front/images/favicon/apple-icon-76x76.png": {
-    "file": "assets/apple-icon-76x76-8b4d56e9.png",
-    "src": "resources/front/images/favicon/apple-icon-76x76.png"
-  },
-  "resources/front/images/favicon/apple-icon-precomposed.png": {
-    "file": "assets/apple-icon-4396f6bc.png",
-    "src": "resources/front/images/favicon/apple-icon.png"
-  },
-  "resources/front/images/favicon/apple-icon.png": {
-    "file": "assets/apple-icon-4396f6bc.png",
-    "src": "resources/front/images/favicon/apple-icon.png"
-  },
-  "resources/front/images/favicon/favicon-16x16.png": {
-    "file": "assets/favicon-16x16-208f2b91.png",
-    "src": "resources/front/images/favicon/favicon-16x16.png"
-  },
-  "resources/front/images/favicon/favicon-32x32.png": {
-    "file": "assets/favicon-32x32-366ca081.png",
-    "src": "resources/front/images/favicon/favicon-32x32.png"
-  },
-  "resources/front/images/favicon/favicon-96x96.png": {
-    "file": "assets/favicon-96x96-082a5331.png",
-    "src": "resources/front/images/favicon/favicon-96x96.png"
-  },
-  "resources/front/images/favicon/favicon.ico": {
-    "file": "assets/favicon-a2313a18.ico",
-    "src": "resources/front/images/favicon/favicon.ico"
-  },
-  "resources/front/images/favicon/ms-icon-144x144.png": {
-    "file": "assets/ms-icon-144x144-001211ec.png",
-    "src": "resources/front/images/favicon/ms-icon-144x144.png"
-  },
-  "resources/front/images/favicon/ms-icon-150x150.png": {
-    "file": "assets/ms-icon-150x150-4ac38043.png",
-    "src": "resources/front/images/favicon/ms-icon-150x150.png"
-  },
-  "resources/front/images/favicon/ms-icon-310x310.png": {
-    "file": "assets/ms-icon-310x310-0fd9d195.png",
-    "src": "resources/front/images/favicon/ms-icon-310x310.png"
-  },
-  "resources/front/images/favicon/ms-icon-70x70.png": {
-    "file": "assets/ms-icon-70x70-0a8b2455.png",
-    "src": "resources/front/images/favicon/ms-icon-70x70.png"
-  },
   "resources/front/images/footer-bg.svg": {
     "file": "assets/footer-bg-acf5c606.svg",
     "src": "resources/front/images/footer-bg.svg"
-  },
-  "resources/front/images/gallery/1.jpg": {
-    "file": "assets/1-ee8ab92d.jpg",
-    "src": "resources/front/images/gallery/1.jpg"
-  },
-  "resources/front/images/gallery/2.jpg": {
-    "file": "assets/2-6242aad2.jpg",
-    "src": "resources/front/images/gallery/2.jpg"
-  },
-  "resources/front/images/gallery/3.jpg": {
-    "file": "assets/3-40da32fa.jpg",
-    "src": "resources/front/images/gallery/3.jpg"
-  },
-  "resources/front/images/gallery/4.jpg": {
-    "file": "assets/4-f89af47a.jpg",
-    "src": "resources/front/images/gallery/4.jpg"
-  },
-  "resources/front/images/gallery/5.jpg": {
-    "file": "assets/5-1d561813.jpg",
-    "src": "resources/front/images/gallery/5.jpg"
   },
   "resources/front/images/home-banner.jpg": {
     "file": "assets/home-banner-44a1696d.jpg",
     "src": "resources/front/images/home-banner.jpg"
   },
-  "resources/front/images/logo.svg": {
-    "file": "assets/logo-f33af3a2.svg",
-    "src": "resources/front/images/logo.svg"
+  "resources/front/images/logo.png": {
+    "file": "assets/logo-08f53643.png",
+    "src": "resources/front/images/logo.png"
   },
   "resources/front/images/logopng.png": {
     "file": "assets/logopng-12cd9e07.png",
@@ -677,34 +493,6 @@
     "file": "assets/tackle-nostar-2b897825.svg",
     "src": "resources/front/images/tackle-nostar.svg"
   },
-  "resources/front/images/wheel/1.jpg": {
-    "file": "assets/1-aa2f2538.jpg",
-    "src": "resources/front/images/wheel/1.jpg"
-  },
-  "resources/front/images/wheel/10.jpg": {
-    "file": "assets/10-ccf73efa.jpg",
-    "src": "resources/front/images/wheel/10.jpg"
-  },
-  "resources/front/images/wheel/2.jpg": {
-    "file": "assets/2-cb548971.jpg",
-    "src": "resources/front/images/wheel/2.jpg"
-  },
-  "resources/front/images/wheel/3.jpg": {
-    "file": "assets/3-39db8562.jpg",
-    "src": "resources/front/images/wheel/3.jpg"
-  },
-  "resources/front/images/wheel/7.jpg": {
-    "file": "assets/7-81878793.jpg",
-    "src": "resources/front/images/wheel/7.jpg"
-  },
-  "resources/front/images/wheel/8.jpg": {
-    "file": "assets/8-0539c595.jpg",
-    "src": "resources/front/images/wheel/8.jpg"
-  },
-  "resources/front/images/wheel/9.jpg": {
-    "file": "assets/9-172b0445.jpg",
-    "src": "resources/front/images/wheel/9.jpg"
-  },
   "resources/front/js/app.css": {
     "file": "assets/app-194c7c31.css",
     "src": "resources/front/js/app.css"
@@ -724,7 +512,7 @@
     "src": "resources/front/js/app.js"
   },
   "resources/front/scss/style.scss": {
-    "file": "assets/style-c0d8dcf9.css",
+    "file": "assets/style-552b7029.css",
     "isEntry": true,
     "src": "resources/front/scss/style.scss"
   },

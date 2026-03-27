@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sales Baaz</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="{{Vite::asset('resources/front/images/favicon/favicon.ico')}}">
+    
     
     {{-- Favicon --}}
     @vite(['resources/front/scss/style.scss', 'resources/front/js/app.js'])

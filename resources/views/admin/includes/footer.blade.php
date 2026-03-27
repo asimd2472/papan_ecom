@@ -7,7 +7,7 @@
         </div>
         <div class="col-auto">
             <div class="develope-text">
-                <p>developed by <a href="http://www.aqualeafitsol.com/">aqualeaf</a></p>
+                <p>developed by <a href="#">Asim</a></p>
             </div>
         </div>
     </div>

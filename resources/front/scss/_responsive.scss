@@ -185,7 +185,7 @@
 
 @media only screen and (max-width: 885px) {
     .homeBanner {
-        height: 43rem;
+        height: 25rem;
         &:after {
             height: 6.188rem;
         }
@@ -550,6 +550,15 @@
     footer {
         &:after {
             top: -1px;
+        }
+    }
+    header {
+        .logo {
+            a {
+            img {
+                width: 60%;
+            }
+            }
         }
     }
 }

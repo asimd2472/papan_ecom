@@ -24,15 +24,15 @@
                         <ul class="d-flex">
                             {{-- <li><i class="fas fa-map-marker-alt"></i> 76 Quirk RoadMilford, CT 06460</li>
                             <li><a href="#"><i class="fas fa-phone-alt"></i> 800-243-2680</a></li> --}}
-                            <li><a href="mailto:asd@gmail.com"><i class="fas fa-envelope"></i> asd@gmail.com</a></li>
+                            <li><a href="mailto:sarkarpapun77@gmail.com"><i class="fas fa-envelope"></i> sarkarpapun77@gmail.com</a></li>
                         </ul>
                     </div>
                     <div class="followUs">
                         <ul class="d-flex align-items-center">
                             <li>Follow us:</li>
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.facebook.com/share/18ZzhMwxxG/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                             {{-- <li><a href="#"><i class="fab fa-twitter"></i></a></li> --}}
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.instagram.com/salesbaaz_com?igsh=cWxpcjBkaWo0dGU2" target="_blank"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

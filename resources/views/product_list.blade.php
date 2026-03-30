@@ -1,6 +1,6 @@
 @extends('layouts.app') @section('content')
 
-<!-- <section
+{{-- <section
     class="productListBanner"
     style="background: url({{ Vite::asset('resources/front/images/pro-single-banner.jpg')}}) center center no-repeat"
 >
@@ -40,45 +40,35 @@
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
     </svg>
-</section> -->
+</section>  --}}
 
 <section class="productList">
     <div class="container-fluid">
         <div class="row">
-            <!-- <div class="listLeft">
+            <div class="listLeft">
                 <button type="button" class="listToggleBtn">
                     Product List
                 </button>
-                {{--
                 <button type="button" class="listToggleBtn">
                     Product List
                 </button>
-                --}}
                 <div class="listLeftInner">
                     <ul>
                         @include('categoryleftpanel')
                     </ul>
                 </div>
-            </div> -->
+            </div>
             <div class="listRight">
                 <div class="listRightInner">
-                    @if (!empty($singleProducttype))
                     <div class="listRightInnerTop text-center">
-                        <h3>{{@$singleProducttype->typename}}</h3>
-                        <p>
-                            {{@$singleProducttype->typedesc}}
-                        </p>
+                        <h3>{{$singleCategory->title}}</h3>
                     </div>
-                    @endif
 
-                    <div class="shopReelsType">
-                        <!-- @if (!empty($singleProducttype))
-                            <h3>New {{@$singleProducttype->typename}}</h3>
-                        @endif -->
+                    <div class="shopReelsType"> 
                         <div class="row justify-content-center g-3">
                             @foreach ($products as $productsItem)
                             <div
-                                class="col-lg-3 col-md-3 col-sm-6 col-6 wow fadeInUpSort delay1"
+                                class="col-lg-4 col-md-4 col-sm-6 col-6 wow fadeInUpSort delay1"
                             >
                                 <a
                                     href="{{ route('product_details', ['product_slug' => $productsItem->product_slug])}}"
@@ -93,51 +83,27 @@
                                     />
                                     @endif
                                     <div class="shopBoxBtm text-start">
-                                        @if ($productsItem->is_variation==0)
-                                            @if ($productsItem->product_stock==0)
-                                                <h6>Coming Soon</h6>
-
-                                            @else
-                                                <h6>New</h6>
-                                            @endif
-                                        @else
-
-                                        <h6>New</h6>
-
-                                        @endif
+                                        
 
 
                                         <h5>
                                             {{$productsItem->product_title}}
                                         </h5>
+
+                                        {{-- <p>{{$productsItem->product_price}}</p>
                                         @if ($productsItem->is_variation==0)
-                                        @if($productsItem->product_offerprice!='')
-                                        <p>
-                                            ${{$productsItem->product_offerprice}}
+                                            <p>₹{{$productsItem->product_offerprice}}</p>
+                                        @else 
+                                            ₹{{ $product->variations->min('price') }}
+                                        @endif  --}}
+                                        <p class="product-price">
+                                            <span class="original">₹{{$productsItem->product_price}}</span>
+                                            @if ($productsItem->is_variation==0)
+                                                <span class="offer">₹{{$productsItem->product_offerprice}}</span>
+                                                @else 
+                                                <span class="offer">₹{{ number_format($productsItem->variations->min('price'), 0) }}</span>
+                                            @endif
                                         </p>
-                                        @else
-                                        <p>${{$productsItem->product_price}}</p>
-                                        @endif @else @php $productAttributeItems
-                                        = $productsItem->ProductAttributeItem;
-                                        $prices =
-                                        collect($productAttributeItems)->pluck('price')->map(function
-                                        ($price) { return floatval($price); });
-                                        @endphp
-                                        @if($prices->max()==$prices->min())
-                                        <p>${{$prices->min()}}</p>
-                                        @else
-                                        <p>
-                                            ${{$prices->min()}} - ${{$prices->max()}}
-                                        </p>
-                                        @endif @endif {{--
-                                        <ul class="d-flex">
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        --}}
                                     </div>
                                 </a>
                             </div>

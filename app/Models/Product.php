@@ -46,4 +46,9 @@ class Product extends Model
         return $this->hasMany(ProductAttributeItemSpecification::class,'product_id', 'id');
     }
 
+    public function variations()
+    {
+        return $this->hasMany(ProductVariation::class);
+    }
+
 }

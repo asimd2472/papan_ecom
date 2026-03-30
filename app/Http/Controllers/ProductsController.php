@@ -31,98 +31,21 @@ class ProductsController extends Controller
 
         // echo $slug;exit;
         $pcategory = ProductCategory::where('slug', $slug)->first();
-        $checkProducttype = Producttype::where('category_id', $pcategory->id)->first();
+    
+            
 
-        if(!empty($checkProducttype)){
+        $products = Product::with(['productCategory' => fn($query) => $query->where('status', 1)->where('slug', $slug)])
+        ->whereHas('productCategory', fn ($query) =>
+            $query->where('slug', $slug)
+        )->get();
 
-            $productType = Producttype::with(['productCategory' => fn($query) => $query->where('status', 1)->where('slug', $slug)])
-            ->whereHas('productCategory', fn ($query) =>
-                $query->where('slug', $slug)
-            )->get();
+        $categoryandType = ProductCategory::where('status', 1)->get();
+        $singleCategory = ProductCategory::where('slug', $slug)->first();
 
-            $categoryandType = ProductCategory::with('producttype')->where('status', 1)->get();
-            $singleCategory = ProductCategory::where('slug', $slug)->first();
-            $brand = Brand::limit(10)->get();
-            // dd($singleCategory);
+        // dd($categoryandType->toArray());
 
-            return view('product_type', compact('title', 'productType', 'categoryandType', 'singleCategory', 'brand'));
+        return view('product_list', compact('title', 'products', 'categoryandType', 'singleCategory'));
 
-        }else{
-
-
-
-            $products_brand = Product::with(['productCategory' => fn($query) => $query->where('status', 1)->where('slug', $slug)])
-            ->whereHas('productCategory', fn ($query) =>
-                $query->where('slug', $slug)
-            )->get()->groupBy('brand_id');
-
-            // if (isset($products_brand[""])) {
-            //     echo 1;exit;
-            // }else{
-            //     echo "11";exit;
-            // }
-
-            // if (array_key_exists('', $products_brand->toArray())) {
-            //     echo "The 'first' element is in the array";
-            // }
-
-            // dd($products_brand->toArray());
-
-            // if(is_null($products_brand[""])){
-            if (array_key_exists('', $products_brand->toArray())) {
-
-                $products = Product::with(['productCategory' => fn($query) => $query->where('status', 1)->where('slug', $slug)])
-                ->whereHas('productCategory', fn ($query) =>
-                    $query->where('slug', $slug)
-                )->get();
-
-                $singleProducttype = Producttype::where('id', '')->first();
-                $categoryandType = ProductCategory::with('producttype')->where('status', 1)->get();
-                $brand = Brand::limit(10)->get();
-                $singleCategory = ProductCategory::where('slug', $slug)->first();
-
-                // dd($products->toArray());
-
-                return view('product_list', compact('title', 'products', 'categoryandType', 'brand', 'singleProducttype', 'singleCategory'));
-
-            }else{
-
-                $brand_list=[];
-                foreach ($products_brand as $key => $value) {
-
-                        $list = Brand::where('id', $key)->first();
-
-                        $brand_list[]=array(
-                            'id'=>$list->id,
-                            'brandname'=>$list->brandname,
-                            'brandimage'=>$list->brandimage,
-                        );
-
-                }
-
-                $singleProducttype = array();
-                $categoryandType = ProductCategory::with('producttype')->where('status', 1)->get();
-                $brand = Brand::limit(10)->get();
-                $singleCategory = ProductCategory::where('slug', $slug)->first();
-
-                // dd($singleProducttype);
-
-                return view('brand_list', compact('title', 'brand_list', 'categoryandType', 'brand', 'singleProducttype', 'singleCategory'));
-                // return view('product_list', compact('title', 'products', 'categoryandType', 'brand', 'singleProducttype', 'singleCategory'));
-
-
-
-            }
-
-
-
-
-
-
-
-
-
-        }
 
 
     }

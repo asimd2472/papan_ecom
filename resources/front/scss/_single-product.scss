@@ -52,6 +52,35 @@
     }
 }
 
+
+.color-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color-circle.active {
+    border: 3px solid #000;
+}
+
+.size-btn {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 6px 14px;
+    margin-right: 8px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.size-btn.active {
+    background: #000;
+    color: #fff;
+}
+
 @keyframes move-forever {
     0% {
         transform: translate3d(-90px, 0, 0);

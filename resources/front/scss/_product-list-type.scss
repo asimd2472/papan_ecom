@@ -6,7 +6,7 @@
     height: 16rem;
 }
 .productList {
-    padding: 4rem 0;
+    padding: 8rem 0;
     border-bottom: #e4e4e4 1px solid;
 }
 .listLeft {
@@ -86,13 +86,13 @@
 .listRightInnerTop {
     // background: $bg-2;
     color: $bg-4;
-    padding: 3rem;
-    border-radius: 1.25rem;
-    border: $bg-15 1px solid;
+    // padding: 3rem;
+    // border-radius: 1.25rem;
+    // border: $bg-15 1px solid;
 }
 
 .shopReelsType {
-    margin-top: 3rem;
+    // margin-top: 3rem;
     &:not(:last-child) {
         margin-bottom: 3rem;
     }
@@ -151,6 +151,31 @@
         }
     }
 }
+
+.shopBoxBtm {
+    margin-top: 12px;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+
+    .original {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+    }
+
+    .offer {
+        color: #27272a;
+        // font-weight: bold;
+        font-size: 16px;
+    }
+}
+
+
 
 .productType {
     .shopBox {

@@ -21,6 +21,7 @@ use App\Models\ProductAttribute;
 use App\Models\ProductAttributeItem;
 use App\Models\ProductAttributeItemImage;
 use App\Models\ProductAttributeItemSpecification;
+use App\Models\ProductVariation;
 
 class CartController extends Controller
 {
@@ -33,40 +34,33 @@ class CartController extends Controller
         $product_title = $request->product_title;
         $size_attribute_name = $request->size_attribute_name;
 
+        $product = Product::where('id', $product_id)->first();
+
+        $product_title = $product_title;
+        $product_image = $product->main_image_name;
+
+        $color = '';
+        $size = '';
         $price = 0;
         if($is_variation==0){
-            $product = Product::where('id', $product_id)->first();
-
-            if($product->product_offerprice!=''){
-                $price = $product->product_offerprice;
-            }else{
-                $price = $product->product_price;
-            }
-
-
+            
+            $price = $product->product_price;
             $id = $product_id.'_'.'0';
 
-            $product_title = $product_title;
-            $product_image = $product->main_image_name;
-
-            $stock = $product->product_stock;
+            
 
         }else if($is_variation==1){
-            $productAttributeItem = ProductAttributeItem::where('id', $attribute_items_id)->first();
+            $productAttributeItem = ProductVariation::where('id', $attribute_items_id)->first();
             $price = $productAttributeItem->price;
             $id = $product_id.'_'.$attribute_items_id;
-
-            $product_title = $product_title.' '.$productAttributeItem->name.' '.$size_attribute_name;
-
-            $productAttributeItemImage = ProductAttributeItemImage::where('attribute_item_id', $productAttributeItem->id)->orderBy('id', 'asc')->first();
-            $product_image = $productAttributeItemImage->image_name;
-
-            $stock = $productAttributeItem->stock;
+            $color = $productAttributeItem->color;
+            $size = $productAttributeItem->size;
         }
 
-        // dd($price);
 
-        if($stock>=$totalqty){
+
+
+        
 
             \Cart::add([
                 'id' => $id,
@@ -77,7 +71,8 @@ class CartController extends Controller
                     'attribute_items_id' => $attribute_items_id,
                     'product_image'=>$product_image,
                     'is_variation'=>$is_variation,
-                    'size_attribute_name'=>$size_attribute_name,
+                    'color'=>$color,
+                    'size'=>$size,
                 ),
             ]);
 
@@ -88,13 +83,6 @@ class CartController extends Controller
                 'msg'=>'Product added in your cart',
                 'totalcart_item'=>$totalcart_item,
             ]);
-
-        }else{
-            return response()->json([
-                'status' => 0,
-                'msg'=>'Out of stock',
-            ]);
-        }
 
 
     }

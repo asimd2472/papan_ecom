@@ -1,3 +1,4 @@
+
 @foreach ($categoryandType as $items)
     @if ($items->slug!='holiday')
         <li class="@if($singleCategory->id==$items->id) active @endif menu-item">

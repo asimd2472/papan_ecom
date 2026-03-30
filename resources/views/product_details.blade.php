@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-<section class="singleProductBanner" style="background: url({{ Vite::asset('resources/front/images/pro-single-banner.jpg')}}) center center no-repeat">
-    <!-- <div class="banSlogan">
+<section class="singleProductBanner" style="background: url({{ Vite::asset('resources/front/images/pro-single-banner.png')}}) center center no-repeat">
+    {{-- <div class="banSlogan">
         <div class="banSloganInner wow fadeInUp delay1">
             <h2>Lorem Ipsum</h4>
                 <h4>is simply dummy text of the printing.</h4>
                 <a href="#">Became a Dealer</a>
         </div>
-    </div> -->
+    </div> --}}
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
@@ -81,56 +81,45 @@
                             </div>
 
                             <div class="sprTop">
-                                @if ($productDetails->is_variation==0)
-                                    @if($productDetails->productCategory->title=='holiday')
-                                        <h5><span><del>${{$productDetails->product_price}}</del></span> ${{$productDetails->product_offerprice}}</h5>
-                                    @else
-
-                                        @if($productDetails->product_offerprice!='')
-                                            <h5>${{$productDetails->product_offerprice}}</h5>
-                                        @else
-                                            <h5>${{$productDetails->product_price}}</h5>
-                                        @endif
+                               
+                                <p class="product-price">
+                                    <span class="original">₹{{$productDetails->product_price}}</span>
+                                    @if ($productDetails->is_variation==0)
+                                        <span class="offer">₹{{$productDetails->product_offerprice}}</span>
+                                        @else 
+                                        <span class="offer" id="product-price">₹{{ number_format($productDetails->variations->min('price'), 0) }}</span>
                                     @endif
-
-                                @else
-                                    @php
-                                        $productAttributeItems = $productDetails->ProductAttributeItem;
-                                        $prices = collect($productAttributeItems)->pluck('price')->map(function ($price) {
-                                            return floatval($price);
-                                        });
-                                    @endphp
-                                    @if ($prices->max()==$prices->min())
-                                        <h5 class="productPrice">${{$prices->min()}}</h5>
-                                    @else
-                                        <h5 class="productPrice">${{$prices->min()}} - ${{$prices->max()}}</h5>
-                                    @endif
-                                @endif
+                                </p>
 
                             </div>
                             @if ($productDetails->is_variation==1)
-                                <div class="sprTop">
-                                    @if (count($productDetails->ProductAttribute)>0)
-                                        @foreach ($productDetails->ProductAttribute as $itemProductAttribute)
-                                            <h6>{{$itemProductAttribute->name}}:</h6>
-                                            <ul class="row g-2">
-                                                @if (count($itemProductAttribute->ProductAttributeItem)>0)
-                                                    @foreach ($itemProductAttribute->ProductAttributeItem as $items)
-                                                        <li class="col-auto"><button class="btn btn-outline-dark" onclick="attributeBtn('{{$items->id}}')" type="button">{{$items->name}}</button></li>
-                                                    @endforeach
-                                                @endif
 
-                                            </ul>
-                                        @endforeach
+                                <div class="color-wrapper mb-10">
+                                    <p class="mb-2">Select Color</p>
+                                    @php
+                                        $colors = $productDetails->variations->pluck('color')->unique();
+                                    @endphp
 
-                                        <div class="size_append">
-
+                                    @foreach($colors as $color)
+                                        <div class="color-circle"
+                                            data-color="{{ $color }}"
+                                            style="background: {{ $color }}">
                                         </div>
+                                    @endforeach
+                                </div>
 
-                                    @endif
-                                        <input type="hidden" name="hidden_attribute_items_id" id="hidden_attribute_items_id" value="">
-                                        <input type="hidden" name="size_attribute" id="size_attribute" value="0">
-                                        <input type="hidden" name="size_attribute_name" id="size_attribute_name" value="">
+                                <div>
+                                    <p class="mb-2">Select Size (UNI)</p>
+                                    <div id="size-container" class="size-wrapper"></div>
+                                </div>
+                                
+                                {{-- <h4 id="product-price"></h4> --}}
+
+                                <div class="sprTop">
+
+                                    <input type="hidden" name="hidden_attribute_items_id" id="hidden_attribute_items_id" value="">
+                                    <input type="hidden" name="color_attribute" id="color_attribute" value="0">
+                                    <input type="hidden" name="size_attribute" id="size_attribute" value="">
 
 
                                 </div>
@@ -150,11 +139,7 @@
 
                                 <div class="inpCartWist">
                                     @if ($productDetails->is_variation==0)
-                                        @if ($productDetails->product_stock==0)
-                                            <h4>Coming Soon</h4>
-                                        @else
-                                            <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}')" class="addToCartBtn">Add To Cart</a>
-                                        @endif
+                                        <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}')" class="addToCartBtn">Add To Cart</a>
                                     @else
                                         <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}')" class="addToCartBtn disable">Add To Cart</a>
                                     @endif
@@ -168,7 +153,7 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <div class="navHeader">
+                        {{-- <div class="navHeader">
                             <ul class="nav nav-tabs " role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
@@ -178,7 +163,7 @@
                                 </li>
 
                             </ul>
-                        </div>
+                        </div> --}}
                         <div class="tab-content pt-4 pb-4" id="nav-tabContent">
                             <div class="tab-pane fade active show" id="overview" role="tabpanel"
                                 aria-labelledby="nav-home-tab">
@@ -201,82 +186,139 @@
 </section>
 
 
-<section class="weCarry">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center secTitle">
-                    <h2>WE CARRY</h2>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="owl-carousel partnerSlider">
-                    @foreach ($brand as $branditem)
-                        <div class="item">
-                            <div class="partnerSliderBox">
-                                <img src="{{asset('storage/images/'.$branditem->brandimage)}}" alt="">
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="about">
-    <div class="container">
-        <div class="row align-items-center g-lg-5">
-            <div class="col">
-                <div class="aboutContent text-center wow fadeInUpSort delay1">
-                    <p>
-                        At Drago Custom Rods, we build unique one of a kind custom rods based on our client's need
-                        and type of fishing that they do. We start with proven
-                        industry blanks from various manufactures and work from there. Our Clients get to choose
-                        from a vast inventory of components to suit their personal
-                        style, from some of the largest component manufacturers in the industry.
-                    </p>
-                    <h5>- By fisherman for fishermen</h5>
-                </div>
-            </div>
-            <div class="col-auto">
-                <div class="aboutImg wow fadeInUpSort delay3">
-                    <img src="{{ Vite::asset('resources/front/images/about.jpg')}}" alt="" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="specificationsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Specifications</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <h4 class="specificationtitle"></h4>
-            <div class="table-responsive">
-                <table class="table">
-                    <tbody class="appendTable">
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
 @endsection
 
 @push('scripts')
 
 <script type="module">
+
+let variations = @json($productDetails->variations);
+
+let selectedColor = null;
+let selectedVariationId = null;
+
+/* =========================
+   INIT (AUTO SELECT LOWEST PRICE)
+========================= */
+
+if (variations.length > 0) {
+
+    let lowestVariation = variations.reduce((min, v) => 
+        v.price < min.price ? v : min
+    );
+
+    selectedColor = lowestVariation.color;
+
+    selectColor(selectedColor);
+    highlightColor(selectedColor);
+}
+
+/* =========================
+   COLOR CLICK
+========================= */
+
+$(document).on('click', '.color-circle', function () {
+
+    let color = $(this).data('color');
+
+    selectColor(color);
+    highlightColor(color);
+});
+
+/* =========================
+   SELECT COLOR → SHOW SIZES
+========================= */
+
+function selectColor(color) {
+
+    selectedColor = color;
+
+    let filtered = variations.filter(v => v.color === color);
+
+    let html = '';
+
+    filtered.forEach(v => {
+
+        let disabledClass = (v.stock !== undefined && v.stock == 0) ? 'disabled' : '';
+
+        html += `
+            <div class="size-btn ${disabledClass}" 
+                 data-id="${v.id}" 
+                 data-price="${v.price}">
+                ${v.size}
+            </div>
+        `;
+    });
+
+    $('#size-container').html(html);
+
+    /* AUTO SELECT FIRST AVAILABLE SIZE */
+    let firstAvailable = filtered.find(v => !v.stock || v.stock > 0);
+
+    if (firstAvailable) {
+        updatePrice(firstAvailable.price);
+        highlightSize(firstAvailable.id);
+
+        selectedVariationId = firstAvailable.id;
+        $('#hidden_attribute_items_id').val(firstAvailable.id);
+    } else {
+        // no stock case
+        $('#product-price').text('Out of stock');
+        selectedVariationId = null;
+        $('#hidden_attribute_items_id').val('');
+    }
+}
+
+/* =========================
+   SIZE CLICK
+========================= */
+
+$(document).on('click', '.size-btn', function () {
+
+    if ($(this).hasClass('disabled')) return;
+
+    let price = $(this).data('price');
+    let id = $(this).data('id');
+
+    updatePrice(price);
+    highlightSize(id);
+
+    selectedVariationId = id;
+    $('#hidden_attribute_items_id').val(id);
+});
+
+/* =========================
+   UPDATE PRICE
+========================= */
+
+function updatePrice(price) {
+    $('#product-price').text('₹' + Math.round(price));
+}
+
+/* =========================
+   ACTIVE STATES
+========================= */
+
+function highlightColor(color) {
+    $('.color-circle').removeClass('active');
+    $(`.color-circle[data-color="${color}"]`).addClass('active');
+}
+
+function highlightSize(id) {
+    $('.size-btn').removeClass('active');
+    $(`.size-btn[data-id="${id}"]`).addClass('active');
+}
+
+
+
+</script>
+
+<script type="module">
+    
+
+
+
     $(document).ready(function () {
         var owl = $('.partnerSlider');
         owl.owlCarousel({

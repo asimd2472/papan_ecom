@@ -24,6 +24,7 @@ use App\Models\ProductAttributeItemSpecification;
 use App\Models\Customrods;
 
 use App\Imports\ProductImport;
+use App\Models\ProductVariation;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Illuminate\Support\Facades\Session;
@@ -144,7 +145,7 @@ class ProductController extends Controller
 
             $input['category_id']=$request->category_id;
             // $input['type_id']=$request->type_id;
-            $input['brand_id']=$request->brand_id;
+            // $input['brand_id']=$request->brand_id;
             $input['product_title']=$request->product_title;
             $input['product_slug']=Str::slug($request->product_title);
             $input['product_desc']=$request->product_desc;
@@ -152,6 +153,7 @@ class ProductController extends Controller
             $input['is_variation']=$request->is_variation;
             $input['main_image_id']=$request->main_image_id;
             $input['main_image_name']=$request->main_image_name;
+            $input['product_price']=$request->product_price;
 
             // $input['length']=$request->length;
             // $input['width']=$request->width;
@@ -178,59 +180,33 @@ class ProductController extends Controller
             if($request->is_variation=='0'){
 
                 Product::where('id', $product_id)->update([
-                    'product_price' => $request->product_price,
                     'product_offerprice' => $request->product_offerprice,
-                    'product_stock' => $request->product_stock,
                 ]);
 
             }else if($request->is_variation=='1'){
 
+                if ($request->is_variation == 1 && $request->variation) {
 
-                if ($request->has('attribute') && is_array($request->attribute) && count($request->attribute) > 0) {
-                    foreach ($request->attribute as $attribute) {
-                        // Check if 'attribute_name' key exists and is not empty
-                        if (isset($attribute['attribute_name']) && $attribute['attribute_name'] !== '') {
-                            // Insert Attribute Name
-                            $product_attribute = ProductAttribute::create([
-                                'product_id' => $product_id,
-                                'name' => $attribute['attribute_name']
-                            ]);
+                    $colors = $request->variation['color'] ?? [];
+                    $sizes  = $request->variation['size'] ?? [];
+                    $prices = $request->variation['price'] ?? [];
 
-                            if(count($attribute['item']) > 0){
+                    for ($i = 0; $i < count($colors); $i++) {
 
-                                foreach($attribute['item'] as $item){
-                                    //Insert Product Arrtibute item
-                                    $product_attribute_item = ProductAttributeItem::create([
-                                        'product_id' => $product_id,
-                                        'attribute_id' => $product_attribute->id,
-                                        'name' => $item['name'],
-                                        'name_attribute' => $item['name_attribute'],
-                                        'stock' => $item['stock'],
-                                        'price' => $item['price'],
-                                        'product_overview' => $item['product_overview'],
-                                    ]);
-
-                                    //item image section
-                                    if($item['images'] != ''){
-                                        $imageArray = explode(',', $item['images']);
-                                        $imageNameArray = explode(',', $item['images_name']);
-                                        foreach($imageArray as $imageKey=>$imageValue){
-                                            //Insert Product item image
-                                            ProductAttributeItemImage::create([
-                                                'product_id' => $product_id,
-                                                'attribute_id' => $product_attribute->id,
-                                                'attribute_item_id' => $product_attribute_item->id,
-                                                'image_id' => $imageValue,
-                                                'image_name' => $imageNameArray[$imageKey],
-                                            ]);
-                                        }
-                                    }
-                                }
-
-                            }
+                        // skip empty rows
+                        if (!$colors[$i] || !$sizes[$i] || !$prices[$i]) {
+                            continue;
                         }
+
+                        ProductVariation::create([
+                            'product_id' => $product_id,
+                            'color' => $colors[$i],
+                            'size' => $sizes[$i],
+                            'price' => $prices[$i],
+                        ]);
                     }
                 }
+                
             }
 
         //return redirect()->back()->with('success', 'Product added successfully');

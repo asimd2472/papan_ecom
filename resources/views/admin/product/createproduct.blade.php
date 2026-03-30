@@ -39,29 +39,13 @@
                     @enderror
                 </div>
             </div>
-            <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="select-wrap">
-                    <label class="lable-head">Type </label>
-                    <select name="type_id" id="type_id" class="form-control input-style">
-                        <option value="">Select Type</option>
-                    </select>
-                    @error('type_id')
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="input-wrap">
+                    <label class="lable-head">Original Price <sup class="star-mark">*</sup></label>
+                    <input type="text" class="form-control input-style isnumber required_no" name="product_price" id="product_price" placeholder="Price" required>
+                    @error('product_price')
                         <span class="error">{{ $message }}</span>
                     @enderror
-                </div>
-            </div> -->
-            <div class="col-xxl-12 col-lg-10 col-md-12 col-sm-12 col-12">
-                <div class="input-wrap">
-                    <label class="lable-head">Select Brand</label>
-                    <ul class="image-checkbox">
-                        @foreach ($brand as $key=>$item)
-                            <li>
-                                <input type="radio" id="myCheckbox{{$key}}" name="brand_id" value="{{$item->id}}"/>
-                                <label for="myCheckbox{{$key}}"><img src="{{asset('storage/images/'.$item->brandimage)}}" /></label>
-                                <span>{{$item->brandname}}</span>
-                            </li>
-                        @endforeach
-                    </ul>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -121,30 +105,12 @@
                 </div>
             </div>
             <div class="row g-3" id="with_out_variation" style="display: none">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                    <div class="input-wrap">
-                        <label class="lable-head">Original Price <sup class="star-mark">*</sup></label>
-                        <input type="text" class="form-control input-style isnumber required_no" name="product_price" id="product_price" placeholder="Price">
-                        @error('product_price')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
+                
                 <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                     <div class="input-wrap">
                         <label class="lable-head">Selling Price <sup class="star-mark">*</sup></label>
                         <input type="text" class="form-control input-style isnumber required_no" name="product_offerprice" id="product_offerprice" placeholder="Discount Price">
                         @error('product_offerprice')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
-                        <span class="error" id="error_message"></span>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
-                    <div class="input-wrap">
-                        <label class="lable-head">Stock <sup class="star-mark">*</sup></label>
-                        <input type="text" class="form-control input-style isnumber required_no" name="product_stock" id="product_stock" placeholder="Stock">
-                        @error('product_stock')
                             <span class="error">{{ $message }}</span>
                         @enderror
                         <span class="error" id="error_message"></span>
@@ -156,65 +122,9 @@
                     <div class="white-box-head">
                         <h3>variation</h3>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="input-wrap">
-                                <label class="lable-head">Type <sup class="star-mark">*</sup></label>
-                                <input type="text" class="form-control input-style required_field" name="attribute[0][attribute_name]" id="" placeholder="e.g : Size,Color">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="variation-wrap">
-                        <div class="variation-box">
-                            <div class="row g-3">
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                    <div class="input-wrap">
-                                        <label class="lable-head">Name <sup class="star-mark">*</sup></label>
-                                        <input type="text" class="form-control input-style required_field" name="attribute[0][item][0][name]" id="" placeholder="e.g : P413641LR">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                    <div class="input-wrap">
-                                        <label class="lable-head">Attribute (use ",")</label>
-                                        <input type="text" class="form-control input-style" name="attribute[0][item][0][name_attribute]" id="" placeholder="e.g : XS,XXL">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                                    <div class="input-wrap">
-                                        <label class="lable-head">Stock <sup class="star-mark">*</sup></label>
-                                        <input type="number" class="form-control input-style required_field" name="attribute[0][item][0][stock]" id="" placeholder="Stock">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                                    <div class="input-wrap">
-                                        <label class="lable-head">Price <sup class="star-mark">*</sup></label>
-                                        <input type="number" class="form-control input-style required_field" name="attribute[0][item][0][price]" id="" placeholder="Price">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                                    <div class="select-btn-img">
-                                        <label class="lable-head">select image <sup class="star-mark">*</sup></label>
-                                        <button type="button" class="img-select-btn select_image"  data-row_id="0">select image</button>
-                                    </div>
-                                    <input type="hidden" name="attribute[0][item][0][images]" id="selected_imgArr_0">
-                                    <input type="hidden" name="attribute[0][item][0][images_name]" id="selected_imgNameArr_0">
-                                </div>
-                                <div class="col-12">
-                                    <div class="white-box-head-small">
-                                        <h3>Overview</h3>
-                                    </div>
-                                    <div class="row g-3">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                            <div class="input-wrap">
-                                                <textarea class="form-control input-style product_overview" name="attribute[0][item][0][product_overview]" id=""></textarea>
-                                            </div>
-                                        </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="variation_container"></div>
+                    
                     <div class="add-variation-btn">
                         <button type="button" class="add-more-varitaion add_variation"><i class="fa-solid fa-plus"></i>add more</button>
                     </div>
@@ -389,69 +299,41 @@
 <script type="module">
 
     var i = 0;
-    $(document).on('click', '.add_variation', function(){
-        ++i;
-        $(".variation-wrap").append(`
-            <div class="variation-box">
-                <div class="delete-variation-btn">
-                    <button type="button" class="delete-more-varitaion delete_variation"><i class="fa-regular fa-trash-can"></i></button>
-                </div>
-                <div class="row g-3">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Name <sup class="star-mark">*</sup></label>
-                            <input type="text" class="form-control input-style required_field" name="attribute[0][item][` + i + `][name]" id="" placeholder="e.g : P413641LR">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Attribute (use ",")</label>
-                            <input type="text" class="form-control input-style" name="attribute[0][item][` + i + `][name_attribute]" id="" placeholder="e.g : XS,XXL">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Stock <sup class="star-mark">*</sup></label>
-                            <input type="number" class="form-control input-style required_field" name="attribute[0][item][` + i + `][stock]" id="" placeholder="Stock">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Price <sup class="star-mark">*</sup></label>
-                            <input type="number" class="form-control input-style required_field" name="attribute[0][item][` + i + `][price]" id="" placeholder="Price">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                        <div class="select-btn-img">
-                            <label class="lable-head">select image <sup class="star-mark">*</sup></label>
-                            <button type="button" class="img-select-btn select_image" data-bs-toggle="modal" data-bs-target="#imageGallery" data-row_id="` + i + `">select image</button>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="white-box-head-small">
-                            <h3>Overview</h3>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="input-wrap">
-                                    <textarea class="form-control input-style product_overview" name="attribute[0][item][` + i + `][product_overview]" id=""></textarea>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <input type="hidden" name="attribute[0][item][` + i + `][images]" id="selected_imgArr_`+i+`">
-            <input type="hidden" name="attribute[0][item][` + i + `][images_name]" id="selected_imgNameArr_`+i+`">
-        `);
-
-        $('.product_overview').summernote({
-            height: 100,
-        });
-    });
+    
     $(document).on('click', '.delete_variation', function(){
         $(this).closest(".variation-box").remove();
+    });
+
+    $(document).on('click', '.add_variation', function () {
+
+        let html = `
+        <div class="variation-box row mb-3 align-items-center">
+
+            <!-- Color Picker -->
+            <div class="col-md-3 d-flex align-items-center">
+                <input type="color" name="variation[color][]" class="form-control form-control-color me-2" value="#0000ff">
+                <span class="color-code">#0000ff</span>
+            </div>
+
+            <!-- Size -->
+            <div class="col-md-3">
+                <input type="text" name="variation[size][]" class="form-control" placeholder="Size (M, L, XL)">
+            </div>
+
+            <!-- Price -->
+            <div class="col-md-3">
+                <input type="number" name="variation[price][]" class="form-control" placeholder="Price">
+            </div>
+
+            <!-- Delete -->
+            <div class="col-md-3">
+                <button type="button" class="btn btn-danger delete_variation">X</button>
+            </div>
+
+        </div>
+        `;
+
+        $('#variation_container').append(html);
     });
 </script>
 <script type="module">

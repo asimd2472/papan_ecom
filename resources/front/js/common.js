@@ -908,50 +908,19 @@ window.addtoCart = function(product_id, is_variation) {
     var size_attribute = $("#size_attribute").val();
     var size_attribute_name = $("#size_attribute_name").val();
 
-    if (is_variation == 1) {
+    
 
-        // if (hidden_attribute_items_id == '') {
-
-        //     $(".alertMsg").show();
-        //     $(".alertMsg").html('Select Options Above');
-
-        // } else {
-        //     $(".alertMsg").hide();
-        //     addtoCart_process(product_id, is_variation, attribute_items_id, totalqty, product_title);
-        // }
-
-        if(size_attribute==0){
-            if (hidden_attribute_items_id == ''){
-                $(".alertMsg").show();
-                $(".alertMsg").html('Select Options Above');
-            }else{
-                $(".alertMsg").hide();
-                addtoCart_process(product_id, is_variation, attribute_items_id, totalqty, product_title, size_attribute_name);
-            }
-        }else if(size_attribute==1){
-            if (size_attribute_name == ''){
-                $(".alertMsg").show();
-                $(".alertMsg").html('Select Options Above');
-            }else{
-                $(".alertMsg").hide();
-                addtoCart_process(product_id, is_variation, attribute_items_id, totalqty, product_title, size_attribute_name);
-            }
-        }
-
-
-    } else {
-        var attribute_items_id = '';
-        addtoCart_process(product_id, is_variation, attribute_items_id, totalqty, product_title, size_attribute_name);
-    }
-
-
-
+    
+    var attribute_items_id = '';
+    addtoCart_process(product_id, is_variation, hidden_attribute_items_id, totalqty, product_title, size_attribute_name);
 
 
 }
 
 
 window.addtoCart_process = function(product_id, is_variation, attribute_items_id, totalqty, product_title, size_attribute_name) {
+
+    console.log(attribute_items_id);
 
     $.ajax({
         url: base_url + '/addtoCart',

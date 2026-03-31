@@ -74,11 +74,12 @@
                             <div class="cart-totals ms-auto">
                                 <p class="c-order-total">Order Total</p>
                                 <p class="cart-price"><span class="money finaltotalprice">${{$total}}</span></p>
-                                @if(!empty(Session::get('user_session')))
+                                <a href="{{url('/checkout')}}" class="mainBtn waterEffect mt-3 w-100">Checkout</a>
+                                {{-- @if(!empty(Session::get('user_session')))
                                     <a href="{{url('/checkout')}}" class="mainBtn waterEffect mt-3 w-100">Checkout</a>
                                 @else
                                     <a href="javascript:void(0)" onclick="loginPopup('checkout')" class="mainBtn waterEffect mt-3 w-100">Checkout</a>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
 

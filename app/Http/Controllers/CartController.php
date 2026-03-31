@@ -44,7 +44,7 @@ class CartController extends Controller
         $price = 0;
         if($is_variation==0){
             
-            $price = $product->product_price;
+            $price = $product->product_offerprice;
             $id = $product_id.'_'.'0';
 
             

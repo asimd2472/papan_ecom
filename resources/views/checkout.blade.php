@@ -7,7 +7,7 @@
         <div class="row cartlist">
             
             <div class="col-12">
-                <form action="" method="POST" id="step1">
+                <form action="" method="POST" id="OrderForm">
                     <div class="step1">
                         <div class="row">
                             <div class="col-lg-6 col-md-12 col-sm-12 col-12">
@@ -17,22 +17,23 @@
                                             <h4>Shipping Information</h4>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+
+                                    <div class="col-lg-6 col-sm-12 col-sm-12 col-12">
                                         <div class="input-wrap">
-                                            <label class="ldl-style">Name <sup class="star-mark">*</sup></label>
-                                            <input type="text" name="name" placeholder="Enter Name" onkeyup="getName(this)" class="form-control input-style" required/>
+                                            <label class="ldl-style">Delivery Location <sup class="star-mark">*</sup></label>
+                                            <select name="location_id" class="form-control input-style" onchange="getLocation(this)" required>
+                                                <option value="">Select Delivery Location</option>
+                                                @foreach($locations as $location)
+                                                    <option value="{{$location->id}}" data-charges="{{$location->charges}}">{{$location->location}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    
+                                    <div class="col-lg-6 col-sm-12 col-sm-12 col-12">
                                         <div class="input-wrap">
-                                            <label class="ldl-style">Address <sup class="star-mark">*</sup></label>
-                                            <input type="text" name="address" placeholder="Enter Street Address" onkeyup="getaddress(this)" class="form-control input-style" required/>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <div class="input-wrap">
-                                            <label class="ldl-style">Pin Code <sup class="star-mark">*</sup></label>
-                                            <input type="text" name="zipcode" placeholder="Enter Zip Code" onkeyup="getzipcode(this)" class="form-control input-style isnumber" required/>
+                                            <label class="ldl-style">Full Address <sup class="star-mark">*</sup></label>
+                                            <input type="text" name="address" placeholder="Enter Full Address" class="form-control input-style" required/>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -42,15 +43,11 @@
                                     </div>
                                     <div class="col-lg-6 col-sm-12 col-sm-12 col-12">
                                         <div class="input-wrap">
-                                            <label class="ldl-style">Email Address <sup class="star-mark">*</sup></label>
-                                            @if(empty(Session::get('user_session')))
-                                                <input type="email" name="email" placeholder="Enter Email Address" class="form-control input-style" required/>
-                                            @else
-                                                <input type="email" name="email" placeholder="Enter Email Address" class="form-control input-style" value="{{Session::get('user_session')->email}}"/>
-                                            @endif
+                                            <label class="ldl-style">Name <sup class="star-mark">*</sup></label>
+                                            <input type="text" name="name" placeholder="Enter Name" onkeyup="getName(this)" class="form-control input-style" required/>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-sm-12 col-sm-12 col-12">
+                                    <div class="col-lg-6 col-sm-12 col-sm-12 col-12 mb-4">
                                         <div class="input-wrap">
                                             <label class="ldl-style">Phone Number <sup class="star-mark">*</sup></label>
                                             <input type="text" name="phone" placeholder="Enter Phone Number" class="form-control input-style isnumber" minlength="10" maxlength="12" required/>
@@ -93,14 +90,17 @@
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
+                                                    <input type="hidden" name="shipping_charge" id="shipping_charge" value="">
+                                                    <input type="hidden" name="location_id" id="location_id" value="">
                                                     <tfoot>
-                                                        <tr>
+                                                        <tr class="shipping_charge_row" style="display:none;">
                                                             <td colspan="2" class="text-end">Shipping Charge</td>
-                                                            <td class="text-end">₹100.00</td>
+                                                            <td class="text-end shipping_charge_amount">0</td>
                                                         </tr>
+                                                        <input type="hidden" name="order_total" id="order_total" value="{{$order_total}}">
                                                         <tr>
                                                             <td colspan="2" class="text-end fw-bold">Total</td>
-                                                            <td class="text-end fw-bold">₹{{number_format($order_total + 100,2)}}</td>
+                                                            <td class="text-end fw-bold order_amount">₹{{number_format($order_total)}}</td>
                                                         </tr>
                                                     </tfoot>
                                                 </table>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="row align-items-center justify-content-end mt-3">
                             <div class="col-auto">
-                                <button type="submit" class="mainBtn">Next</button>
+                                <button type="submit" class="mainBtn">Order Now</button>
                             </div>
                         </div>
                     </div>
@@ -126,3 +126,45 @@
 
 
 @endsection
+
+@push('scripts')
+
+<script type="module">
+    window.getLocation = function(select) {
+        let selectedOption = select.options[select.selectedIndex];
+
+        let locationId = select.value;
+        let charges = selectedOption.getAttribute('data-charges');
+
+        if(locationId){
+            if(charges!=''){
+                document.getElementById('shipping_charge').value = charges;
+                document.querySelector('.shipping_charge_amount').innerText = '₹'+charges;
+                document.querySelector('.shipping_charge_row').style.display = '';
+                let order_total = parseFloat(document.getElementById('order_total').value);
+                let total_amount = order_total + parseFloat(charges);
+                document.querySelector('.order_amount').innerText = '₹'+total_amount.toFixed(2);
+
+                $('#location_id').val(locationId);
+            }else{
+                document.getElementById('shipping_charge').value = '';
+                document.querySelector('.shipping_charge_amount').innerText = 'Free';
+                document.querySelector('.shipping_charge_row').style.display = '';
+                let order_total = parseFloat(document.getElementById('order_total').value);
+                document.querySelector('.order_amount').innerText = '₹'+order_total.toFixed(2); 
+
+                $('#location_id').val(locationId);
+            }
+        }else{
+            document.getElementById('shipping_charge').value = '';
+            document.querySelector('.shipping_charge_amount').innerText = '0';
+            document.querySelector('.shipping_charge_row').style.display = 'none';
+            let order_total = parseFloat(document.getElementById('order_total').value);
+            document.querySelector('.order_amount').innerText = '₹'+order_total.toFixed(2); 
+
+            $('#location_id').val('');
+        }
+        
+    }
+</script>
+@endpush

@@ -414,6 +414,55 @@ $(function() {
     });
 
 
+    $("#OrderForm").validate({
+        ignore: [],
+        rules: {
+        },
+        messages: {
+
+        },
+        errorElement: 'span',
+        submitHandler: function(form) {
+
+            var form = $('#OrderForm')[0];
+            var formData = new FormData(form);
+            event.preventDefault();
+
+            $.ajax({
+                url: base_url + "/place_order_cod",
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                data: formData,
+                beforeSend: function() {
+                    $(".page-loader").show();
+                },
+                success: function(data) {
+                    if (data.status == 1) {
+
+                        var url = base_url + "/order-success?transaction_id=" + data.transaction_id;
+                        window.location.replace(url);
+                        $(".page-loader").hide();
+
+                    } else if (data.status == 0) {
+
+                        $(".page-loader").hide();
+
+                        Swal.fire({
+                            title: 'Error',
+                            text: data.msg,
+                            icon: 'warning',
+                        });
+
+                    }
+                }
+            });
+
+
+        }
+    });
+
+
     $('input[name="method"]').click(function() {
         var selectedMethod = $('input[name="method"]:checked').val();
         // console.log(selectedMethod);

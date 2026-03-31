@@ -8,7 +8,7 @@
         <ul>
             <li class="{{Route::currentRouteName() == 'admin.dashboard' ? 'active' : ''}}"><a href="{{route('admin.dashboard')}}"><span class="menu-left-icon"><i class="fa-solid fa-gauge-high"></i></span><p>Dashboard</p></a></li>
             {{-- <li class="{{Route::currentRouteName() == 'admin.testimonials' ? 'active' : ''}}"><a href="{{route('admin.testimonials')}}"><span class="menu-left-icon"><i class="fa-solid fa-comment"></i></span><p>Testimonials</p></a></li> --}}
-            <li class="{{Route::currentRouteName() == 'admin.brand' ? 'active' : ''}}"><a href="{{route('admin.brand')}}"><span class="menu-left-icon"><i class="fa-solid fa-users"></i></span><p>Brand</p></a></li>
+            {{-- <li class="{{Route::currentRouteName() == 'admin.brand' ? 'active' : ''}}"><a href="{{route('admin.brand')}}"><span class="menu-left-icon"><i class="fa-solid fa-users"></i></span><p>Brand</p></a></li> --}}
 
             <li class="menu-open {{request()->segment(2) == 'productcategory' || request()->segment(2) == 'producttype' || request()->segment(3) == 'all-images' || request()->segment(2) == 'createproduct' || request()->segment(2) == 'product-list' || request()->segment(2) == 'custom_rod' ? 'active' : ''}}">
                 <a href="javascript:;">
@@ -33,6 +33,7 @@
             {{-- <li class="{{Route::currentRouteName() == 'admin.setting' ? 'active' : ''}}"><a href="{{route('admin.setting')}}"><span class="menu-left-icon"><i class="fa-solid fa-gear"></i></span><p>Setting</p></a></li> --}}
             {{-- <li class="{{Route::currentRouteName() == 'admin.coupon' ? 'active' : ''}}"><a href="{{route('admin.coupon')}}"><span class="menu-left-icon"><i class="fa-solid fa-money-bill"></i></span><p>Coupon</p></a></li> --}}
             <li class="{{Route::currentRouteName() == 'admin.home_page' ? 'active' : ''}}"><a href="{{route('admin.home_page')}}"><span class="menu-left-icon"><i class="fa-solid fa-file"></i></span><p>Home Page</p></a></li>
+            <li class="{{Route::currentRouteName() == 'admin.delivery_locations' ? 'active' : ''}}"><a href="{{route('admin.delivery_locations')}}"><span class="menu-left-icon"><i class="fa-solid fa-map-location"></i></span><p>Delivery Locations</p></a></li>
         </ul>
     </nav>
 </div>

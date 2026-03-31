@@ -241,6 +241,19 @@ $(function() {
         }
     });
 
+    $("#LocationForm").validate({
+
+        rules : {
+        },
+       messages : {
+       },
+       errorElement : 'span',
+       submitHandler: function(form) {
+            e.preventDefault();
+            $("#CouponForm").submit();
+        }
+    });
+
 
     $('#product_desc').summernote({
         height: 400,
@@ -396,6 +409,7 @@ window.getType = function(categort_id) {
         }
     });
 }
+
 
 
 

@@ -240,7 +240,9 @@ class ProductController extends Controller
         $productcategory = ProductCategory::orderBy('id', 'DESC')->get();
         // dd($products);
         $brand = Brand::orderBy('id', 'DESC')->get();
-        return view('admin.product.product_edit', compact('products', 'productcategory', 'brand'));
+
+        $variations = $products->variations; 
+        return view('admin.product.product_edit', compact('products', 'productcategory', 'brand', 'variations'));
     }
 
     public function update_product(Request $request){
@@ -279,8 +281,7 @@ class ProductController extends Controller
             $input['height']=$request->height;
             $input['weight']=$request->weight;
 
-            /* $input['product_price']=$request->product_price;
-            $input['product_offerprice']=$request->product_offerprice; */
+            $input['product_price']=$request->product_price;
 
             $product = Product::where('id', $product_id)->update($input);
             $product_id=$product_id;
@@ -305,89 +306,32 @@ class ProductController extends Controller
             if($request->is_variation=='0'){
 
                 Product::where('id', $product_id)->update([
-                    'product_price' => $request->product_price,
                     'product_offerprice' => $request->product_offerprice,
-                    'product_stock' => $request->product_stock,
                 ]);
 
             }else if($request->is_variation=='1'){
 
-                // dd($request->all());
+                $variationIds = $request->variation['id'];
 
-                if ($request->has('attribute') && is_array($request->attribute) && count($request->attribute) > 0) {
-                    // ProductAttribute::where('product_id', $product_id)->delete();
+                foreach ($request->variation['price'] as $key => $price) {
 
-                    foreach ($request->attribute as $key=>$attribute) {
+                    $data = [
+                        'color' => $request->variation['color'][$key],
+                        'size'  => $request->variation['size'][$key],
+                        'price' => $price,
+                        'product_id' => $request->product_id,
+                    ];
 
-                        // Check if 'attribute_name' key exists and is not empty
-                        if (isset($attribute['attribute_name']) && $attribute['attribute_name'] !== '') {
-                            // Insert Attribute Name
-
-
-
-                            $product_attribute = ProductAttribute::where('id', $key)->update([
-                                'name' => $attribute['attribute_name']
-                            ]);
-
-
-
-                            if(count($attribute['item']) > 0){
-
-                                foreach($attribute['item'] as $attributekeys=>$item){
-
-                                    $check_attbute = ProductAttributeItem::where('id', $attributekeys)->where('product_id', $product_id)->get();
-
-
-
-                                    if(count($check_attbute)>0){
-                                        // dd($check_attbute);
-                                        $product_attribute_item = ProductAttributeItem::where('id', $attributekeys)->update([
-                                            'name' => $item['name'],
-                                            'name_attribute' => $item['name_attribute'],
-                                            'stock' => $item['stock'],
-                                            'price' => $item['price'],
-                                            'product_overview' => $item['product_overview'],
-
-                                        ]);
-                                    }else{
-                                        $product_attribute_item = ProductAttributeItem::create([
-                                            'product_id' => $product_id,
-                                            'attribute_id' => $key,
-                                            'name' => $item['name'],
-                                            'name_attribute' => $item['name_attribute'],
-                                            'stock' => $item['stock'],
-                                            'price' => $item['price'],
-                                            'product_overview' => $item['product_overview'],
-                                        ]);
-                                    }
-
-
-                                    ProductAttributeItemImage::where('product_id', $product_id)->where('attribute_item_id', $attributekeys)->delete();
-
-                                    //item image section
-                                    if($item['images'] != ''){
-
-                                        $imageArray = explode(',', $item['images']);
-                                        $imageNameArray = explode(',', $item['images_name']);
-
-                                        foreach($imageArray as $imageKey=>$imageValue){
-
-                                            ProductAttributeItemImage::create([
-                                                'product_id' => $product_id,
-                                                'attribute_id' => $key,
-                                                'attribute_item_id' => $attributekeys,
-                                                'image_id' => $imageValue,
-                                                'image_name' => $imageNameArray[$imageKey],
-                                            ]);
-                                        }
-                                    }
-
-                                }
-
-                            }
-                        }
+                    if (!empty($variationIds[$key])) {
+                        // UPDATE
+                        ProductVariation::where('id', $variationIds[$key])
+                            ->update($data);
+                    } else {
+                        // INSERT NEW
+                        ProductVariation::create($data);
                     }
                 }
+
             }
 
             die(json_encode(['status'=>1, 'msg'=>'Product added successfully']));
@@ -688,6 +632,18 @@ class ProductController extends Controller
             ]);
         }
 
+    }
+
+    public function delete_product_variation(Request $request)
+    {
+        $variation = ProductVariation::find($request->id);
+
+        if($variation){
+            $variation->delete();
+            return response()->json(['status' => 1]);
+        }
+
+        return response()->json(['status' => 0]);
     }
 
 

@@ -117,22 +117,6 @@
   color: #27ae60;
 }
 
-.mainBtn {
-  background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 32px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 12px;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px rgba(39,174,96,0.08);
-}
-.mainBtn:hover {
-  background: linear-gradient(90deg, #219150 0%, #27ae60 100%);
-}
-
 // Empty cart message
 .cartpage.text-center {
   padding: 48px 0;

@@ -113,11 +113,11 @@
   },
   "resources/admin/images/favicon/apple-icon-precomposed.png": {
     "file": "assets/apple-icon-575fa430.png",
-    "src": "resources/admin/images/favicon/apple-icon.png"
+    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
   },
   "resources/admin/images/favicon/apple-icon.png": {
     "file": "assets/apple-icon-575fa430.png",
-    "src": "resources/admin/images/favicon/apple-icon.png"
+    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
   },
   "resources/admin/images/favicon/favicon-16x16.png": {
     "file": "assets/favicon-16x16-ac5e2512.png",
@@ -169,7 +169,7 @@
     "css": [
       "assets/app-ef57bcae.css"
     ],
-    "file": "assets/app-59b61792.js",
+    "file": "assets/app-1b7e143f.js",
     "imports": [
       "_additional-methods.min-367bca93.js"
     ],
@@ -481,6 +481,10 @@
     "file": "assets/pro-single-banner-1d806704.jpg",
     "src": "resources/front/images/pro-single-banner.jpg"
   },
+  "resources/front/images/pro-single-banner.png": {
+    "file": "assets/pro-single-banner-98154cb0.png",
+    "src": "resources/front/images/pro-single-banner.png"
+  },
   "resources/front/images/reels.jpg": {
     "file": "assets/reels-ac302950.jpg",
     "src": "resources/front/images/reels.jpg"
@@ -504,7 +508,7 @@
     "css": [
       "assets/app-194c7c31.css"
     ],
-    "file": "assets/app-9c03812c.js",
+    "file": "assets/app-0f821f4d.js",
     "imports": [
       "_additional-methods.min-367bca93.js"
     ],
@@ -512,7 +516,7 @@
     "src": "resources/front/js/app.js"
   },
   "resources/front/scss/style.scss": {
-    "file": "assets/style-343b17cd.css",
+    "file": "assets/style-e2f5ca5f.css",
     "isEntry": true,
     "src": "resources/front/scss/style.scss"
   },

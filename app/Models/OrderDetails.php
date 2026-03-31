@@ -18,4 +18,9 @@ class OrderDetails extends Model
     {
         return $this->HasOne(Product::class,'id', 'product_id');
     }
+
+    public function productVariationDetails(): HasOne
+    {
+        return $this->HasOne(ProductVariation::class,'id', 'attribute_items_id');
+    }
 }

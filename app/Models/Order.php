@@ -19,13 +19,20 @@ class Order extends Model
         return $this->HasOne(UserBillingAddress::class,'id', 'billing_id');
     }
 
-    public function UserShippingAddress(): HasOne
-    {
-        return $this->HasOne(UserShippingAddress::class,'id', 'shipping_id');
-    }
+    // public function UserShippingAddress(): HasOne
+    // {
+    //     return $this->HasOne(UserShippingAddress::class,'id', 'shipping_id');
+    // }
 
     public function OrderDetails(): HasMany
     {
         return $this->HasMany(OrderDetails::class,'order_id', 'id');
     }
+
+    public function UserShippingAddress(): HasOne
+    {
+        return $this->HasOne(DeliveryLocations::class,'id', 'shipping_id');
+    }
+
+    
 }

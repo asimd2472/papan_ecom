@@ -13,7 +13,7 @@
                             @foreach ($productCategory as $productcategoryitem)
                                 @if ($productcategoryitem->slug!='holiday')
                                 <li>
-                                    <a href="#">{{$productcategoryitem->title}}</a>
+                                    <a href="{{ route('product_categoty', $productcategoryitem->slug)}}">{{$productcategoryitem->title}}</a>
                                 </li>
                                 @endif
                             @endforeach

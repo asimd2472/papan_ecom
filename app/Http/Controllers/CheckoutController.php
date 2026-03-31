@@ -23,6 +23,7 @@ use App\Models\Product;
 use App\Models\State;
 use App\Models\Setting;
 use App\Models\Coupon;
+use App\Models\DeliveryLocations;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class CheckoutController extends Controller
@@ -32,6 +33,8 @@ class CheckoutController extends Controller
         $cart_item = \Cart::getContent();
         // echo count($cart_item);exit;
 
+        $locations = DeliveryLocations::all();
+
         if(count($cart_item)==0){
             return redirect('/');
         }else{
@@ -39,7 +42,7 @@ class CheckoutController extends Controller
             $cart_item = \Cart::getContent();
             $countries = Countries::all();
             $state_list = State::where('country_id', '233')->get();
-            return view('checkout', compact('title', 'cart_item', 'countries', 'state_list'));
+            return view('checkout', compact('title', 'cart_item', 'countries', 'state_list', 'locations'));
         }
 
     }
@@ -1120,6 +1123,66 @@ class CheckoutController extends Controller
 
     }
 
+
+    public function place_order_cod(Request $request){
+
+        // dd($request->all());
+
+        $transaction_id = 'COD-'.Str::upper(Str::random(10));
+
+        $order = Order::create([
+            'order_no'=>$transaction_id,
+            'shipping_id'=>$request->location_id,
+            'address'=>$request->address,
+            'name'=>$request->name,
+            'phone'=>$request->phone,
+            'shipping_charges'=>$request->shipping_charge,
+            'total_amount'=>$request->order_total,
+            'total_pay'=>$request->order_total+($request->shipping_charge!=''?$request->shipping_charge:0),
+        ]);
+
+        $order_id = $order->id;
+
+    
+        $cart_item = \Cart::getContent();
+
+        // dd($cart_item);
+
+        foreach ($cart_item as $key => $cart_itemvalue) {
+
+            if($cart_itemvalue->attributes->is_variation=='1'){
+                $product_id = Str::before($cart_itemvalue->id, '_');
+                $attribute_items_id = Str::after($cart_itemvalue->attributes->attribute_items_id, '_');
+            }else{
+                $product_id = Str::before($cart_itemvalue->id, '_');
+                $attribute_items_id = '';
+            }
+
+            $dataOrderdetails = [
+                'order_id'=>$order_id,
+                'product_id'=>$product_id,
+                'is_variation'=>$cart_itemvalue->attributes->is_variation,
+                'attribute_items_id'=>$attribute_items_id,
+                'name'=>$cart_itemvalue->name,
+                'price'=>$cart_itemvalue->price,
+                'quantity'=>$cart_itemvalue->quantity,
+                'product_image'=>$cart_itemvalue->attributes->product_image,
+            ];
+
+            OrderDetails::create($dataOrderdetails);
+        }
+
+        \Cart::clear();
+
+
+        return response()->json([
+            'status' => 1,
+            'msg' => 'ok',
+            'transaction_id' => $transaction_id,
+        ]);
+
+                   
+    }
 
 
 

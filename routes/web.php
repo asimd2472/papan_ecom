@@ -90,6 +90,8 @@ Route::post('/cancel_order', [FrontMyaccountController::class, 'cancel_order'])-
 
 Route::get('/track_order', [FrontMyaccountController::class, 'track_order'])->name('track_order');
 
+Route::post('/place_order_cod', [CheckoutController::class, 'place_order_cod'])->name('place_order_cod');
+
 
 
 
@@ -128,6 +130,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/edit-product/{id}', [ProductController::class, 'product_edit'])->name('product_edit');
         Route::get('/delete_product/{id}', [ProductController::class, 'delete_product'])->name('delete_product');
         Route::post('/update_product', [ProductController::class, 'update_product'])->name('update_product');
+
+        Route::post('/delete_product_variation', [ProductController::class, 'delete_product_variation'])->name('delete_product_variation');
+
+        
 
         Route::get('/all-product-image', [ProductController::class, 'ajaxAllProductImage'])->name('all_product_image');
         Route::get('/search_all_product_image', [ProductController::class, 'search_all_product_image'])->name('search_all_product_image');
@@ -175,6 +181,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::get('/home-page', [PagesController::class, 'home_page'])->name('home_page');
         Route::post('/save_home_page', [PagesController::class, 'save_home_page'])->name('save_home_page');
-
+        Route::get('/delivery_locations', [PagesController::class, 'delivery_locations'])->name('delivery_locations');
+        Route::get('/create-delivery-locations', [PagesController::class, 'create_delivery_locations'])->name('create_delivery_locations');
+        Route::post('/save_location', [PagesController::class, 'save_location'])->name('save_location');
+        Route::get('/edit_location/{id}', [PagesController::class, 'edit_location'])->name('edit_location');
+        Route::get('/delete_location/{id}', [PagesController::class, 'delete_location'])->name('delete_location');
     });
 });

@@ -37,7 +37,7 @@
             <div class="col-auto">
                 <div class="loginReg">
                     <ul class="d-flex align-items-center">
-                        <li class="my-account-wrap">
+                        {{-- <li class="my-account-wrap">
                             @if(empty(Session::get('user_session')))
                                 <a href="javascript:void(0)" onclick="loginPopup('login')"><i class="fas fa-user-alt"></i></a>
                             @else
@@ -47,7 +47,7 @@
                                     <li><a href="{{url('user_logout')}}"><i class="fas fa-sign-out-alt"></i>logout</a></li>
                                 </ul>
                             @endif
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('cart')}}" class="cartIcon"><i class="fas fa-shopping-bag"></i><span class="totalcart_item">{{\Cart::getTotalQuantity()}}</span></a>
                         </li>

@@ -40,31 +40,17 @@
                 </div>
             </div>
             <input type="hidden" name="product_id" value="{{$products->id}}">
+            
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="select-wrap">
-                    <label class="lable-head">Type</label>
-                    <select name="type_id" id="type_id" class="form-control input-style">
-                        <option value="{{@$products->Producttype->id}}">{{@$products->Producttype->typename}}</option>
-                    </select>
-                    @error('type_id')
+                <div class="input-wrap">
+                    <label class="lable-head">Original Price <sup class="star-mark">*</sup></label>
+                    <input type="text" class="form-control input-style isnumber required_no" name="product_price" id="product_price" placeholder="Price" required value="{{$products->product_price}}">
+                    @error('product_price')
                         <span class="error">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
-            <div class="col-xxl-12 col-lg-10 col-md-12 col-sm-12 col-12">
-                <div class="input-wrap">
-                    <label class="lable-head">Select Brand</label>
-                    <ul class="image-checkbox">
-                        @foreach ($brand as $key=>$item)
-                            <li>
-                                <input type="radio" id="myCheckbox{{$key}}" name="brand_id" value="{{$item->id}}" @if($products->brand_id==$item->id) checked @endif/>
-                                <label for="myCheckbox{{$key}}"><img src="{{asset('storage/images/'.$item->brandimage)}}" /></label>
-                                <span>{{$item->brandname}}</span>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
+            
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="input-wrap">
                     <label class="lable-head">Select Main Image<sup class="star-mark">*</sup></label>
@@ -104,25 +90,7 @@
                 </div>
             </div>
 
-            {{-- <div class="col-xxl-12 col-lg-10 col-md-12 col-sm-12 col-12">
-                <div class="admin-input-wrap">
-                    <label class="lable-head">Image Upload <sup class="star-mark">*</sup> [Image should be less than 500kb | Dimensions 367x309 | accept only jpg, jpeg, png]</label>
-                    <div class="d-flex upload_box">
-                        <div class="product-up">
-                            <input type="file" name="product_img[]" id="product-img" data-max_length="" class="upload_inputfile" multiple required>
-                            <label for="product-img" class="file-lbl">
-                                <span>
-                                    <i class="fa-solid fa-upload"></i>
-                                </span>
-                            </label>
-                        </div>
-                        <div class="product-up-show file-scroll upload_img_wrap">
-                            <span id="show_image"></span>
-
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+            
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="input-wrap">
                     <label class="lable-head">Is Variation <sup class="star-mark">*</sup></label>
@@ -143,31 +111,15 @@
                     @enderror
                 </div>
             </div>
+
+
             <div class="row g-3" id="with_out_variation" @if($products->is_variation=='1') style="display: none" @endif>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="input-wrap">
-                        <label class="lable-head">Original Price <sup class="star-mark">*</sup></label>
-                        <input type="text" class="form-control input-style isnumber required_no" name="product_price" id="product_price" value="{{$products->product_price}}" placeholder="Price">
-                        @error('product_price')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="input-wrap">
-                        <label class="lable-head">Selling Price <sup class="star-mark">*</sup></label>
-                        <input type="text" class="form-control input-style isnumber required_no" name="product_offerprice" id="product_offerprice" value="{{$products->product_offerprice}}" placeholder="Discount Price">
-                        @error('product_offerprice')
-                            <span class="error">{{ $message }}</span>
-                        @enderror
-                        <span class="error" id="error_message"></span>
-                    </div>
-                </div>
+                
                 <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                     <div class="input-wrap">
-                        <label class="lable-head">Stock <sup class="star-mark">*</sup></label>
-                        <input type="text" class="form-control input-style isnumber required_no" name="product_stock" id="product_stock" placeholder="Stock" value="{{$products->product_stock}}">
-                        @error('product_stock')
+                        <label class="lable-head">Selling Price <sup class="star-mark">*</sup></label>
+                        <input type="text" class="form-control input-style isnumber required_no" name="product_offerprice" id="product_offerprice" placeholder="Discount Price" value="{{$products->product_offerprice}}">
+                        @error('product_offerprice')
                             <span class="error">{{ $message }}</span>
                         @enderror
                         <span class="error" id="error_message"></span>
@@ -179,112 +131,60 @@
                     <div class="white-box-head">
                         <h3>variation</h3>
                     </div>
-                    @if(!empty($products->ProductAttribute))
-                    @foreach ($products->ProductAttribute as $item)
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="input-wrap">
-                                <label class="lable-head">Type <sup class="star-mark">*</sup></label>
-                                <input type="text" class="form-control input-style required_field" name="attribute[{{$item->id}}][attribute_name]" id="" value="{{$item->name}}" placeholder="e.g : Profishiency Casting Reels">
-                                <input type="hidden" name="" id="attribute_name_id" value="{{$item->id}}">
-                            </div>
-                        </div>
-                    </div>
 
+                    <div id="variation_container">
 
-                    <div class="variation-wrap">
-                    @if(!empty($products->ProductAttributeItem))
-                    @foreach ($products->ProductAttributeItem as $keys=>$itemProductAttributeItem)
+                        @if(!empty($variations) && count($variations) > 0)
+                            @foreach($variations as $key => $variation)
+                            <div class="variation-box row mb-3 align-items-center" id="variation-box{{$variation->id}}">
 
+                                <!-- Hidden ID (IMPORTANT for update) -->
+                                <input type="hidden" name="variation[id][]" value="{{$variation->id}}">
 
-                            <div class="variation-box" id="variation-box{{$itemProductAttributeItem->id}}">
-                                <div class="delete-variation-btn">
-                                    <button type="button" class="delete-more-varitaion delete_variation_update" onclick="delete_Item({{$products->id}},{{$itemProductAttributeItem->id}})"><i class="fa-regular fa-trash-can"></i></button>
+                                <!-- Color -->
+                                <div class="col-md-3 d-flex align-items-center">
+                                    <input type="color" name="variation[color][]" 
+                                        class="form-control form-control-color me-2"
+                                        value="{{$variation->color}}">
+                                    <span class="color-code">{{$variation->color}}</span>
                                 </div>
-                                <div class="row g-3">
-                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                        <div class="input-wrap">
-                                            <label class="lable-head">Name <sup class="star-mark">*</sup></label>
-                                            <input type="text" class="form-control input-style required_field" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][name]" id="" value="{{$itemProductAttributeItem->name}}" placeholder="e.g : P413641LR" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                        <div class="input-wrap">
-                                            <label class="lable-head">Attribute (use ",")</label>
-                                            <input type="text" class="form-control input-style required_field" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][name_attribute]" id="" value="{{$itemProductAttributeItem->name_attribute}}" placeholder="e.g : XS,XXL">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                                        <div class="input-wrap">
-                                            <label class="lable-head">Stock <sup class="star-mark">*</sup></label>
-                                            <input type="number" class="form-control input-style required_field" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][stock]" id="" value="{{$itemProductAttributeItem->stock}}" placeholder="Stock" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                                        <div class="input-wrap">
-                                            <label class="lable-head">Price <sup class="star-mark">*</sup></label>
-                                            <input type="number" class="form-control input-style required_field" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][price]" id="" value="{{$itemProductAttributeItem->price}}" placeholder="Price" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
 
-                                        @php
-                                            $imageArray = ['']; // Initialize the array for each iteration
-                                            $imageIdArray = [''];
-                                            foreach ($itemProductAttributeItem->ProductAttributeItemImage as $key => $value) {
-                                                $imageArray[] = $value->image_name;
-                                                $imageIdArray[] = $value->image_id;
-                                            }
-                                            $imageString = implode(',', $imageArray);
-                                            $imageString = ltrim($imageString, ',');
-
-                                            $imageStringId = implode(',', $imageIdArray);
-                                            $imageStringId = ltrim($imageStringId, ',');
-
-                                        @endphp
-                                        <div class="select-btn-img">
-                                            <label class="lable-head">select image <sup class="star-mark">*</sup></label>
-                                            <button type="button" class="img-select-btn select_image"  data-row_id="{{$keys}}" data-old_image="{{$imageString}}" data-type="update">select image</button>
-                                        </div>
-                                        {{-- <input type="hidden" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][images]" id="selected_imgArr_{{$keys}}">
-                                        <input type="hidden" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][images_name]" id="selected_imgNameArr_{{$keys}}" value=""> --}}
-
-                                        <input type="hidden" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][images]" id="selected_imgArr_{{$keys}}" value="{{$imageStringId}}">
-                                        <input type="hidden" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][images_name]" id="selected_imgNameArr_{{$keys}}" value="{{$imageString}}">
-
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="white-box-head-small">
-                                            <h3>Overview</h3>
-                                        </div>
-                                        <div class="row g-3">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <div class="input-wrap">
-                                                    <textarea class="form-control input-style product_overview" name="attribute[{{$item->id}}][item][{{$itemProductAttributeItem->id}}][product_overview]" id="">{!!$itemProductAttributeItem->product_overview!!}</textarea>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                <!-- Size -->
+                                <div class="col-md-3">
+                                    <input type="text" name="variation[size][]" 
+                                        class="form-control"
+                                        value="{{$variation->size}}">
                                 </div>
+
+                                <!-- Price -->
+                                <div class="col-md-3">
+                                    <input type="number" name="variation[price][]" 
+                                        class="form-control"
+                                        value="{{$variation->price}}">
+                                </div>
+
+                                <!-- Delete -->
+                                <div class="col-md-3">
+                                    <button type="button" 
+                                        class="btn btn-danger delete_old_variation"
+                                        data-id="{{$variation->id}}">
+                                        X
+                                    </button>
+                                </div>
+
                             </div>
+                            @endforeach
+                        @endif
 
-                        @php
-                            $last_item_row = $itemProductAttributeItem->id;
-                        @endphp
-                    @endforeach
-                    <input type="hidden" id="last_item_row" value="{{$last_item_row}}">
-                    @endif
                     </div>
-                    @endforeach
-                    @endif
-
+                    
                     <div class="add-variation-btn">
-
                         <button type="button" class="add-more-varitaion add_variation"><i class="fa-solid fa-plus"></i>add more</button>
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-12">
                 <div class="input-wrap">
                     <label class="lable-head">Description <sup class="star-mark">*</sup></label>
@@ -298,42 +198,6 @@
 
             @csrf
 
-            <div class="col-md-3 mt-3">
-                <div class="input-wrap">
-                    <label class="lable-head">Length (in Inches)</label>
-                    <input type="text" class="form-control input-style isnumber" name="length" id="length" placeholder="Length" value="{{$products->length}}" required>
-                    @error('length')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-md-3 mt-3">
-                <div class="input-wrap">
-                    <label class="lable-head">Width (in Inches)</label>
-                    <input type="text" class="form-control input-style isnumber" name="width" id="width" placeholder="Width" value="{{$products->width}}" required>
-                    @error('width')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-md-3 mt-3">
-                <div class="input-wrap">
-                    <label class="lable-head">Height (in Inches)</label>
-                    <input type="text" class="form-control input-style isnumber" name="height" id="height" placeholder="Height" value="{{$products->height}}" required>
-                    @error('height')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
-            <div class="col-md-3 mt-3">
-                <div class="input-wrap">
-                    <label class="lable-head">Weight (in Pounds)</label>
-                    <input type="text" class="form-control input-style isnumber" name="weight" id="weight" placeholder="Weight" value="{{$products->weight}}" required>
-                    @error('weight')
-                        <span class="error">{{ $message }}</span>
-                    @enderror
-                </div>
-            </div>
 
             <div class="col-md-12">
                 <div class="input-wrap">
@@ -454,75 +318,69 @@
 @push('scripts')
 
 <script type="module">
-    var attribute_name_id = $("#attribute_name_id").val();
-    var last_item_row = $("#last_item_row").val();
-    var i = parseInt(last_item_row)+1;
-    $(document).on('click', '.add_variation', function(){
-        ++i;
-        $(".variation-wrap").append(`
-            <div class="variation-box">
-                <div class="delete-variation-btn">
-                    <button type="button" class="delete-more-varitaion delete_variation"><i class="fa-regular fa-trash-can"></i></button>
-                </div>
-                <div class="row g-3">
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Name <sup class="star-mark">*</sup></label>
-                            <input type="text" class="form-control input-style required_field" name="attribute[` + attribute_name_id + `][item][` + i + `][name]" id="" placeholder="e.g : P413641LR">
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Attribute (use ",")</label>
-                            <input type="text" class="form-control input-style" name="attribute[` + attribute_name_id + `][item][` + i + `][name_attribute]" id="" placeholder="e.g : XS,XXL">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Stock <sup class="star-mark">*</sup></label>
-                            <input type="number" class="form-control input-style required_field" name="attribute[` + attribute_name_id + `][item][` + i + `][stock]" id="" placeholder="Stock">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                        <div class="input-wrap">
-                            <label class="lable-head">Price <sup class="star-mark">*</sup></label>
-                            <input type="number" class="form-control input-style required_field" name="attribute[` + attribute_name_id + `][item][` + i + `][price]" id="" placeholder="Price">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-                        <div class="select-btn-img">
-                            <label class="lable-head">select image <sup class="star-mark">*</sup></label>
-                            <button type="button" class="img-select-btn select_image" data-row_id="` + i + `" data-old_image="" data-type="add">select image</button>
-                        </div>
-                        <input type="hidden" name="attribute[` + attribute_name_id + `][item][` + i + `][images]" id="selected_imgArr_`+i+`">
-                        <input type="hidden" name="attribute[` + attribute_name_id + `][item][` + i + `][images_name]" id="selected_imgNameArr_`+i+`">
-                    </div>
-                    <div class="col-12">
-                        <div class="white-box-head-small">
-                            <h3>Overview</h3>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="input-wrap">
-                                    <textarea class="form-control input-style product_overview" name="attribute[` + attribute_name_id + `][item][` + i + `][product_overview]" id=""></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        `);
-
-        $('.product_overview').summernote({
-            height: 100,
-        });
-    });
+    var i = 0;
+    
     $(document).on('click', '.delete_variation', function(){
         $(this).closest(".variation-box").remove();
     });
 
+    $(document).on('click', '.add_variation', function () {
 
+        let html = `
+        <div class="variation-box row mb-3 align-items-center">
+
+            <!-- New item (no id) -->
+            <input type="hidden" name="variation[id][]" value="">
+
+            <div class="col-md-3 d-flex align-items-center">
+                <input type="color" name="variation[color][]" class="form-control form-control-color me-2" value="#000000">
+                <span class="color-code">#000000</span>
+            </div>
+
+            <div class="col-md-3">
+                <input type="text" name="variation[size][]" class="form-control" placeholder="Size">
+            </div>
+
+            <div class="col-md-3">
+                <input type="number" name="variation[price][]" class="form-control" placeholder="Price">
+            </div>
+
+            <div class="col-md-3">
+                <button type="button" class="btn btn-danger delete_variation">X</button>
+            </div>
+
+        </div>
+        `;
+
+        $('#variation_container').append(html);
+    });
+
+
+    $(document).on('click', '.delete_old_variation', function(){
+
+        let id = $(this).data('id');
+        let row = $(this).closest('.variation-box');
+
+        if(confirm("Are you sure?")) {
+            $.ajax({
+                url: "{{route('admin.delete_product_variation')}}",
+                type: "POST",
+                data: {
+                    id: id,
+                    _token: "{{csrf_token()}}"
+                },
+                success: function(res){
+                    if(res.status == 1){
+                        row.remove();
+                    }else{
+                        alert("Failed to delete");
+                    }
+                }
+            });
+        }
+
+    });
 </script>
 <script type="module">
 

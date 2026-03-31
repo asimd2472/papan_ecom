@@ -53,7 +53,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="cart-item-price"><span class="money">${{$item->price}}</span></td>
+                                            <td class="cart-item-price"><span class="money">₹{{$item->price}}</span></td>
                                             <td class="cart-item-quantity">
                                                 <input type="hidden" name="totalCartItem" id="totalCartItem_{{$item->id}}" value="{{$item->quantity}}">
                                                 <div class="priceControl d-flex justify-content-center align-items-center">
@@ -62,7 +62,7 @@
                                                     <button class="controls2" type="button" value="+">+</button>
                                                 </div>
                                             </td>
-                                            <td class="cart-item-total last"><span class="money totalamount_{{$item->id}}">${{($item->price*$item->quantity)}}</span></td>
+                                            <td class="cart-item-total last"><span class="money totalamount_{{$item->id}}">₹{{($item->price*$item->quantity)}}</span></td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -73,7 +73,7 @@
                         <div class="cart-tools d-flex flex-wrap justify-content-between align-items-start">
                             <div class="cart-totals ms-auto">
                                 <p class="c-order-total">Order Total</p>
-                                <p class="cart-price"><span class="money finaltotalprice">${{$total}}</span></p>
+                                <p class="cart-price"><span class="money finaltotalprice">₹{{$total}}</span></p>
                                 <a href="{{url('/checkout')}}" class="mainBtn waterEffect mt-3 w-100">Checkout</a>
                                 {{-- @if(!empty(Session::get('user_session')))
                                     <a href="{{url('/checkout')}}" class="mainBtn waterEffect mt-3 w-100">Checkout</a>

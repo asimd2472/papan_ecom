@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<section class="productListBanner" style="background: url({{ Vite::asset('resources/front/images/pro-single-banner.jpg')}}) center center no-repeat">
+{{-- <section class="productListBanner" style="background: url({{ Vite::asset('resources/front/images/pro-single-banner.jpg')}}) center center no-repeat">
     <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
         <defs>
@@ -14,7 +14,7 @@
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
     </svg>
-</section>
+</section> --}}
 <section class="order-success-sec">
     <div class="container-fluid">
         <div class="row justify-content-center">

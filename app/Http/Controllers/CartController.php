@@ -33,6 +33,11 @@ class CartController extends Controller
         $totalqty = $request->totalqty;
         $product_title = $request->product_title;
         $size_attribute_name = $request->size_attribute_name;
+        $type = $request->type;
+
+        if($type=='buy'){
+            \Cart::clear();
+        }
 
         $product = Product::where('id', $product_id)->first();
 

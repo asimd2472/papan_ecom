@@ -1133,7 +1133,7 @@ class CheckoutController extends Controller
         $order = Order::create([
             'order_no'=>$transaction_id,
             'shipping_id'=>$request->location_id,
-            'address'=>$request->address,
+            // 'address'=>$request->address,
             'name'=>$request->name,
             'phone'=>$request->phone,
             'shipping_charges'=>$request->shipping_charge,

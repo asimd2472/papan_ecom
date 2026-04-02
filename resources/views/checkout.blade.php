@@ -29,13 +29,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    
-                                    <div class="col-lg-6 col-sm-12 col-sm-12 col-12">
-                                        <div class="input-wrap">
-                                            <label class="ldl-style">Full Address <sup class="star-mark">*</sup></label>
-                                            <input type="text" name="address" placeholder="Enter Full Address" class="form-control input-style" required/>
-                                        </div>
-                                    </div>
                                     <div class="col-12">
                                         <div class="user-info-head mt-3">
                                             <h4>Contact Information</h4>

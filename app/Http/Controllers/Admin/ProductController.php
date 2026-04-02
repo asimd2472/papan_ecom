@@ -181,6 +181,7 @@ class ProductController extends Controller
 
                 Product::where('id', $product_id)->update([
                     'product_offerprice' => $request->product_offerprice,
+                    'product_stock' => $request->product_stock,
                 ]);
 
             }else if($request->is_variation=='1'){
@@ -190,6 +191,7 @@ class ProductController extends Controller
                     $colors = $request->variation['color'] ?? [];
                     $sizes  = $request->variation['size'] ?? [];
                     $prices = $request->variation['price'] ?? [];
+                    $stock = $request->variation['stock'] ?? [];
 
                     for ($i = 0; $i < count($colors); $i++) {
 
@@ -203,6 +205,7 @@ class ProductController extends Controller
                             'color' => $colors[$i],
                             'size' => $sizes[$i],
                             'price' => $prices[$i],
+                            'stock' => $stock[$i],
                         ]);
                     }
                 }
@@ -307,17 +310,21 @@ class ProductController extends Controller
 
                 Product::where('id', $product_id)->update([
                     'product_offerprice' => $request->product_offerprice,
+                    'product_stock' => $request->product_stock,
                 ]);
 
             }else if($request->is_variation=='1'){
 
                 $variationIds = $request->variation['id'];
 
+                // dd($request->variation['stock']);
+
                 foreach ($request->variation['price'] as $key => $price) {
 
                     $data = [
                         'color' => $request->variation['color'][$key],
                         'size'  => $request->variation['size'][$key],
+                        'stock'  => $request->variation['stock'][$key],
                         'price' => $price,
                         'product_id' => $request->product_id,
                     ];

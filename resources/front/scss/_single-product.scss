@@ -160,6 +160,24 @@
         }
     }
 }
+
+.buyNowBtn {
+    font-size: 1.25rem;
+    background: #085f76;
+    border: none;
+    line-height: 3.75rem;
+    padding: 0 2rem;
+    border-radius: 0.625rem;
+    font-family: "Khand";
+    font-weight: 600;
+    display: inline-block;
+    line-height: 3.2rem;
+    border-radius: 4px;
+    color: #fff;
+}
+.buyNowBtn:hover {
+    color: #fff;
+}
 .starsContainer {
     &.is-med {
         .starRating {

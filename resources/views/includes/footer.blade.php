@@ -21,10 +21,22 @@
                         </ul>
                     </div>
                     <div class="contAddress">
-                        <ul class="d-flex">
-                            {{-- <li><i class="fas fa-map-marker-alt"></i> 76 Quirk RoadMilford, CT 06460</li>
-                            <li><a href="#"><i class="fas fa-phone-alt"></i> 800-243-2680</a></li> --}}
-                            <li><a href="mailto:sarkarpapun77@gmail.com"><i class="fas fa-envelope"></i> sarkarpapun77@gmail.com</a></li>
+                        <ul class="d-flex flex-column flex-md-row">
+                            <li>
+                                <a href="#"><i class="fas fa-phone-alt"></i> +91 7439658868</a>
+                            </li>
+
+                            <li>
+                                <a href="https://wa.me/917439658868" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> +91 7439658868
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="mailto:sarkarpapun77@gmail.com">
+                                    <i class="fas fa-envelope"></i> sarkarpapun77@gmail.com
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="followUs">

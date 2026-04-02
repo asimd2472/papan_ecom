@@ -113,11 +113,11 @@
   },
   "resources/admin/images/favicon/apple-icon-precomposed.png": {
     "file": "assets/apple-icon-575fa430.png",
-    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
+    "src": "resources/admin/images/favicon/apple-icon.png"
   },
   "resources/admin/images/favicon/apple-icon.png": {
     "file": "assets/apple-icon-575fa430.png",
-    "src": "resources/admin/images/favicon/apple-icon-precomposed.png"
+    "src": "resources/admin/images/favicon/apple-icon.png"
   },
   "resources/admin/images/favicon/favicon-16x16.png": {
     "file": "assets/favicon-16x16-ac5e2512.png",
@@ -508,7 +508,7 @@
     "css": [
       "assets/app-194c7c31.css"
     ],
-    "file": "assets/app-0f821f4d.js",
+    "file": "assets/app-f15e0457.js",
     "imports": [
       "_additional-methods.min-367bca93.js"
     ],
@@ -516,7 +516,7 @@
     "src": "resources/front/js/app.js"
   },
   "resources/front/scss/style.scss": {
-    "file": "assets/style-e2f5ca5f.css",
+    "file": "assets/style-8308623f.css",
     "isEntry": true,
     "src": "resources/front/scss/style.scss"
   },

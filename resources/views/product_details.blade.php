@@ -112,6 +112,10 @@
                                     <p class="mb-2">Select Size (UNI)</p>
                                     <div id="size-container" class="size-wrapper"></div>
                                 </div>
+
+                                <div class="mt-3">
+                                    <p class="avalableStock">Available stock: <span id="available-stock">-</span></p>
+                                </div>
                                 
                                 {{-- <h4 id="product-price"></h4> --}}
 
@@ -123,6 +127,12 @@
 
 
                                 </div>
+                            @else
+
+                                <div class="mt-3 mb-3">
+                                    <p class="avalableStock">Available stock: {{$productDetails->product_stock=='' ? 0 :$productDetails->product_stock}}</p>
+                                </div>
+
                             @endif
 
                             <div class="alert alert-danger alertMsg" style="display: none;"></div>
@@ -139,10 +149,43 @@
 
                                 <div class="inpCartWist">
                                     @if ($productDetails->is_variation==0)
-                                        <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}')" class="addToCartBtn">Add To Cart</a>
+                                        @if ($productDetails->product_stock > 0)
+                                            <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}', 'cart')" class="addToCartBtn">Add To Cart</a>
+                                            <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}', 'buy')" class="buyNowBtn">Buy Now</a>
+                                        @endif
                                     @else
-                                        <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}')" class="addToCartBtn disable">Add To Cart</a>
+                                        <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}', 'cart')" class="addToCartBtn disable" id="addToCartBtnVar">Add To Cart</a>
+                                        <a href="javascript:void(0)" onclick="addtoCart('{{$productDetails->id}}', '{{$productDetails->is_variation}}', 'buy')" class="buyNowBtn" id="buyNowBtnVar">Buy Now</a>
                                     @endif
+                                @if ($productDetails->is_variation==1)
+                                <script type="module">
+                                    function toggleVariationButtons(stock) {
+                                        if (typeof stock === 'undefined' || stock === null || stock < 1) {
+                                            $('#addToCartBtnVar').hide();
+                                            $('#buyNowBtnVar').hide();
+                                        } else {
+                                            $('#addToCartBtnVar').show();
+                                            $('#buyNowBtnVar').show();
+                                        }
+                                    }
+
+                                    // Hook into updateAvailableStock
+                                    const origUpdateAvailableStock = window.updateAvailableStock;
+                                    window.updateAvailableStock = function(stock) {
+                                        origUpdateAvailableStock(stock);
+                                        toggleVariationButtons(stock);
+                                    };
+
+                                    // On page load, hide buttons if no variation selected or stock is 0
+                                    $(document).ready(function() {
+                                        let initialStock = $('#available-stock').text();
+                                        if (initialStock === '-' || parseInt(initialStock) < 1) {
+                                            $('#addToCartBtnVar').hide();
+                                            $('#buyNowBtnVar').hide();
+                                        }
+                                    });
+                                </script>
+                                @endif
                                 </div>
                             </div>
                         </div>
@@ -262,11 +305,19 @@ function selectColor(color) {
 
         selectedVariationId = firstAvailable.id;
         $('#hidden_attribute_items_id').val(firstAvailable.id);
+        updateAvailableStock(firstAvailable.stock);
+        if (firstAvailable.stock !== undefined && firstAvailable.stock < 1) {
+            showStockAlert();
+        } else {
+            hideStockAlert();
+        }
     } else {
         // no stock case
         $('#product-price').text('Out of stock');
         selectedVariationId = null;
         $('#hidden_attribute_items_id').val('');
+        updateAvailableStock(0);
+        showStockAlert();
     }
 }
 
@@ -286,6 +337,17 @@ $(document).on('click', '.size-btn', function () {
 
     selectedVariationId = id;
     $('#hidden_attribute_items_id').val(id);
+
+    // Find the selected variation to get its stock
+    let selectedVar = variations.find(v => v.id == id);
+    if (selectedVar) {
+        updateAvailableStock(selectedVar.stock);
+        if (selectedVar.stock !== undefined && selectedVar.stock < 1) {
+            showStockAlert();
+        } else {
+            hideStockAlert();
+        }
+    }
 });
 
 /* =========================
@@ -294,6 +356,22 @@ $(document).on('click', '.size-btn', function () {
 
 function updatePrice(price) {
     $('#product-price').text('₹' + Math.round(price));
+}
+
+function updateAvailableStock(stock) {
+    if (typeof stock === 'undefined' || stock === null) {
+        $('#available-stock').text('-');
+    } else {
+        $('#available-stock').text(stock);
+    }
+}
+
+function showStockAlert() {
+    $('.alertMsg').text('Selected variant is out of stock!').show();
+}
+
+function hideStockAlert() {
+    $('.alertMsg').hide();
 }
 
 /* =========================

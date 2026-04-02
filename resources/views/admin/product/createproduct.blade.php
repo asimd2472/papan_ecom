@@ -116,6 +116,16 @@
                         <span class="error" id="error_message"></span>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <div class="input-wrap">
+                        <label class="lable-head">Stock <sup class="star-mark">*</sup></label>
+                        <input type="text" class="form-control input-style isnumber required_no" name="product_stock" id="product_stock" placeholder="Stock">
+                        @error('product_stock')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                        <span class="error" id="error_message"></span>
+                    </div>
+                </div>
             </div>
             <div class="col-12" id="with_variation" style="display: none">
                 <div class="dashboard-white-box">
@@ -321,12 +331,16 @@
             </div>
 
             <!-- Price -->
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <input type="number" name="variation[price][]" class="form-control" placeholder="Price">
             </div>
 
+            <div class="col-md-2">
+                <input type="number" name="variation[stock][]" class="form-control" placeholder="Stock">
+            </div>
+
             <!-- Delete -->
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <button type="button" class="btn btn-danger delete_variation">X</button>
             </div>
 

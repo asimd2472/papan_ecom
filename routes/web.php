@@ -47,48 +47,48 @@ Route::get('/viewSpecification', [ProductsController::class, 'viewSpecification'
 Route::post('/addtoCart', [CartController::class, 'addtoCart'])->name('addtoCart');
 Route::get('/cart', [CartController::class, 'cartlist'])->name('cart');
 
-Route::get('/privacy-policy', [PageController::class, 'privacy_policy'])->name('privacy_policy');
-Route::get('/shipping-and-return-policy', [PageController::class, 'shipping_and_return'])->name('shipping_and_return');
-Route::get('/terms-and-condition', [PageController::class, 'terms_and_condition'])->name('terms_and_condition');
+// Route::get('/privacy-policy', [PageController::class, 'privacy_policy'])->name('privacy_policy');
+// Route::get('/shipping-and-return-policy', [PageController::class, 'shipping_and_return'])->name('shipping_and_return');
+// Route::get('/terms-and-condition', [PageController::class, 'terms_and_condition'])->name('terms_and_condition');
 
-Route::post('/customrodsave', [PageController::class, 'customrodsave'])->name('customrodsave');
+// Route::post('/customrodsave', [PageController::class, 'customrodsave'])->name('customrodsave');
 
-Route::get('/login', [FrontMyaccountController::class, 'login'])->name('login');
-Route::get('/signup', [FrontMyaccountController::class, 'signup'])->name('signup');
+// Route::get('/login', [FrontMyaccountController::class, 'login'])->name('login');
+// Route::get('/signup', [FrontMyaccountController::class, 'signup'])->name('signup');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 Route::post('/cartupdate', [CartController::class, 'cartupdate'])->name('cartupdate');
 Route::post('/logincheck', [FrontMyaccountController::class, 'logincheck'])->name('logincheck');
 
 // User dashboard
-Route::get('/user-dashboard', [FrontMyaccountController::class, 'user_dashboard'])->name('user_dashboard');
-Route::get('/order-history', [FrontMyaccountController::class, 'order_history'])->name('order_history');
-Route::get('/order-details/{order_id}', [FrontMyaccountController::class, 'order_details'])->name('order_details');
-Route::get('/edit-account', [FrontMyaccountController::class, 'edit_account'])->name('edit_account');
+// Route::get('/user-dashboard', [FrontMyaccountController::class, 'user_dashboard'])->name('user_dashboard');
+// Route::get('/order-history', [FrontMyaccountController::class, 'order_history'])->name('order_history');
+// Route::get('/order-details/{order_id}', [FrontMyaccountController::class, 'order_details'])->name('order_details');
+// Route::get('/edit-account', [FrontMyaccountController::class, 'edit_account'])->name('edit_account');
 
-Route::post('/handleonlinepay', [CheckoutController::class, 'handleonlinepay'])->name('handleonlinepay');
+// Route::post('/handleonlinepay', [CheckoutController::class, 'handleonlinepay'])->name('handleonlinepay');
 Route::get('/order-success', [CheckoutController::class, 'order_success'])->name('order_success');
 
 Route::post('remove_cart', [CheckoutController::class, 'remove_cart'])->name('remove_cart');
 
-Route::get('/user_logout', [FrontMyaccountController::class, 'user_logout'])->name('user_logout');
-Route::get('/change-password', [FrontMyaccountController::class, 'change_password'])->name('change_password');
-Route::post('/user_changepassword', [FrontMyaccountController::class, 'user_changepassword'])->name('user_changepassword');
-Route::post('/user_resetpassword', [FrontMyaccountController::class, 'user_resetpassword'])->name('user_resetpassword');
+// Route::get('/user_logout', [FrontMyaccountController::class, 'user_logout'])->name('user_logout');
+// Route::get('/change-password', [FrontMyaccountController::class, 'change_password'])->name('change_password');
+// Route::post('/user_changepassword', [FrontMyaccountController::class, 'user_changepassword'])->name('user_changepassword');
+// Route::post('/user_resetpassword', [FrontMyaccountController::class, 'user_resetpassword'])->name('user_resetpassword');
 
-Route::get('/holiday-sale', [HomeController::class, 'holiday_sale'])->name('holiday_sale');
+// Route::get('/holiday-sale', [HomeController::class, 'holiday_sale'])->name('holiday_sale');
 
-Route::post('/store-newslater-email', [HomeController::class, 'storeNewslaterEmail']);
+// Route::post('/store-newslater-email', [HomeController::class, 'storeNewslaterEmail']);
 
-Route::get('/get_fedex_rate', [CheckoutController::class, 'get_fedex_rate'])->name('get_fedex_rate');
-Route::post('/save_customerdata', [CheckoutController::class, 'save_customerdata'])->name('save_customerdata');
-Route::post('/get_customerdata', [CheckoutController::class, 'get_customerdata'])->name('get_customerdata');
-Route::post('/checkCoupon', [CheckoutController::class, 'checkCoupon'])->name('checkCoupon');
-Route::post('/removeCoupon', [CheckoutController::class, 'removeCoupon'])->name('removeCoupon');
+// Route::get('/get_fedex_rate', [CheckoutController::class, 'get_fedex_rate'])->name('get_fedex_rate');
+// Route::post('/save_customerdata', [CheckoutController::class, 'save_customerdata'])->name('save_customerdata');
+// Route::post('/get_customerdata', [CheckoutController::class, 'get_customerdata'])->name('get_customerdata');
+// Route::post('/checkCoupon', [CheckoutController::class, 'checkCoupon'])->name('checkCoupon');
+// Route::post('/removeCoupon', [CheckoutController::class, 'removeCoupon'])->name('removeCoupon');
 
-Route::post('/cancel_order', [FrontMyaccountController::class, 'cancel_order'])->name('cancel_order');
+// Route::post('/cancel_order', [FrontMyaccountController::class, 'cancel_order'])->name('cancel_order');
 
-Route::get('/track_order', [FrontMyaccountController::class, 'track_order'])->name('track_order');
+// Route::get('/track_order', [FrontMyaccountController::class, 'track_order'])->name('track_order');
 
 Route::post('/place_order_cod', [CheckoutController::class, 'place_order_cod'])->name('place_order_cod');
 

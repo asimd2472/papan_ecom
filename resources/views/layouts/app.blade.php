@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sales Baaz</title>
+    <title>SalesBaaz – Stylish & Affordable Fashion for Everyone</title>
+    <meta name="SalesBaaz offers trendy, budget-friendly apparel for all. Discover stylish clothing for every occasion without breaking the bank">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::asset('resources/front/images/favicon_io/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ Vite::asset('resources/front/images/favicon_io/favicon-32x32.png')}}">

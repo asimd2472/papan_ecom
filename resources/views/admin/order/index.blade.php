@@ -25,6 +25,7 @@
               <th scope="col">Date</th>
               {{-- <th scope="col">Status</th> --}}
               <th scope="col"></th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,10 @@
                   <td>{{date('M d, Y', strtotime(str_replace('.', '/', $item->created_at)))}}</td>
                   {{-- <td>{{$item->current_status}}</td> --}}
                   <td><a href="{{url('admin/order-details/'.$item->id)}}" title="Order details"><i class="fas fa-clipboard-list"></a></td>
+                    <td>
+                        <a href="{{url('admin/delete_order/'.$item->id)}}" title="Delete" onclick="return confirm('Are you sure to delete this order?')"><i class="fas fa-trash"></i></a>
+                    </td>
+                    
               </tr>
 
             @endforeach

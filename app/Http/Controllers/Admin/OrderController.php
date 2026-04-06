@@ -21,4 +21,13 @@ class OrderController extends Controller
         $upsShipment = UpsShipment::where('order_id', $order_id)->get();
         return view('admin.order.order_details', compact('order_details', 'upsShipment'));
     }
+
+    
+
+    public function delete_order($id){
+
+        Order::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Order Delete successfully.');
+
+    }
 }

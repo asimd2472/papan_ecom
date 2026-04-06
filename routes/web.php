@@ -168,6 +168,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/order_list', [OrderController::class, 'order_list'])->name('order_list');
         Route::get('/order-details/{order_id}', [OrderController::class, 'order_details'])->name('order_details');
 
+        Route::get('/delete_order/{id}', [OrderController::class, 'delete_order'])->name('delete_order');
+
         Route::get('/news-letter-list', [NewsLetterController::class, 'newslater_list'])->name('newslater_list');
         Route::get('/delete_newsletters/{id}', [NewsLetterController::class, 'delete_newsletters'])->name('delete_newsletters');
 
